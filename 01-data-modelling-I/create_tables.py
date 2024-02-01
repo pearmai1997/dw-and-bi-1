@@ -19,23 +19,24 @@ table_create_actors = """
         email text NOT NULL,
         gravatar_id text,
         avatar_url text,
-        node_id int,
+        node_id int NOT NULL,
         PRIMARY KEY(id) 
     )
 """
 table_create_events = """
     CREATE TABLE IF NOT EXISTS events (
         id text NOT NULL,
-        type text,
+        type text NOT NULL,
         actor_id int NOT NULL,
-        create_at date,
+        create_at TIMESTAMP NOT NULL,
         event_url text,
         repo_id int NOT NULL,
         repo_name text NOT NULL,
         repo_title text,
-        update_at date,
+        update_at TIMESTAMP NOT NULL,
         repo_url text,
-        public text, 
+        state text,
+        public text NOT NULL, 
         PRIMARY KEY(id),
         CONSTRAINT fk_actor FOREIGN KEY(actor_id) REFERENCES actors(id)
     )

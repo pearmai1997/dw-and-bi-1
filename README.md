@@ -1,7 +1,5 @@
 # Data Warehouse and Business Intelligence
 
-## Heading 2
+## Week 1
 
-### Heading 3
-
-## Heading 123241432432-8r9403ruer90f uie90w
+สร้าง Columns เพิ่มเติม

@@ -1,3 +1,8 @@
+## Data model
+https://github.com/Fooklnwza007/dw-and-bi/edit/main/01-data-modelling-I/Readme.md#:~:text=Data%20model-,diagram,-.png
+<br>
+<br>
+
 **Step 01** เปลี่ยน path ให้อยู่ใน 01-data-molling-1
 ```
 $ cd 01-data-modeling-i

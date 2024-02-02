@@ -27,7 +27,7 @@ $ docker run -p 8080:80 nginx
 
 **Step 03** เพื่อให้ Python สามารถเขียนด้วย Code ของ Postgres ต้องลง Libary ที่เกี่ยวข้อง
 ```
-$ pip install psycopg2-binary
+$ pip install psycopg2
 ```
 
 **Step 04** Run docker-compose.yml เพื่อสร้าง Database Postgres และ Adminer ด้วย docker

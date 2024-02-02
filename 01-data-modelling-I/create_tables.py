@@ -11,14 +11,14 @@ table_drop_actor = "DROP TABLE IF EXISTS actor"
 table_drop_repo = "DROP TABLE IF EXISTS repo"
 table_drop_org = "DROP TABLE IF EXISTS org"
 table_drop_payload = "DROP TABLE IF EXISTS payload"
-table_drop_commit = "DROP TABLE IF EXISTS commit"
+table_drop_commits = "DROP TABLE IF EXISTS commits"
 
 table_create_actor = """
     CREATE TABLE IF NOT EXISTS actor (
         actor_id int,
-        login varchar(100) NOT NULL,
-        gravatar_id varchar(100),
-        avatar_url varchar(100),
+        login varchar(500) NOT NULL,
+        gravatar_id varchar(500),
+        avatar_url varchar(500),
         PRIMARY KEY(actor_id)
     )
 """
@@ -26,9 +26,9 @@ table_create_actor = """
 table_create_org = """
     CREATE TABLE IF NOT EXISTS org (
         org_id int,
-        login varchar(100) NOT NULL,
-        gravatar_id varchar(100),
-        avatar_url varchar(100),
+        login varchar(500) NOT NULL,
+        gravatar_id varchar(500),
+        avatar_url varchar(500),
         PRIMARY KEY(org_id)
     )
 """
@@ -36,38 +36,38 @@ table_create_org = """
 table_create_repo = """
     CREATE TABLE IF NOT EXISTS repo (
         repo_id int,
-        name varchar(100) NOT NULL,
-        url varchar(100),
+        name varchar(500) NOT NULL,
+        url varchar(500),
         PRIMARY KEY(repo_id)
     )
 """
 
-table_create_commit = """
-    CREATE TABLE IF NOT EXISTS commit (
-        commit_id varchar(100) PRIMARY KEY,
-        name varchar(100) NOT NULL,
-        "distinct" varchar(100)
+table_create_commits = """
+    CREATE TABLE IF NOT EXISTS commits (
+        commits_sha varchar(500) PRIMARY KEY,
+        name varchar(500),
+        "distinct" varchar(500)
     )
 """
 table_create_payload = """
     CREATE TABLE IF NOT EXISTS payload (
         payload_push_id int,
-        action varchar(100) NOT NULL,
-        node_id varchar(100),
-        type varchar(100),
+        action varchar(500),
+        node_id varchar(500),
+        type varchar(500),
         number int,
-        title varchar(100),
-        commit_id varchar(100),
+        title varchar(500),
+        commits_sha varchar(500),
         PRIMARY KEY(payload_push_id),
-        CONSTRAINT fk_commit FOREIGN KEY(commit_id) REFERENCES commit(commit_id)
+        CONSTRAINT fk_commits FOREIGN KEY(commits_sha) REFERENCES commits(commits_sha)
     )
 """
 
 table_create_event = """
     CREATE TABLE IF NOT EXISTS event (
-        event_id varchar(100) NOT NULL,
-        event_type varchar(100) NOT NULL,
-        event_url varchar(100) NOT NULL,
+        event_id varchar(500) NOT NULL,
+        event_type varchar(500) NOT NULL,
+        event_url varchar(500) NOT NULL,
         public boolean NOT NULL,
         create_at timestamp NOT NULL,
         actor_id int,
@@ -88,7 +88,7 @@ create_table_queries = [
     table_create_actor,
     table_create_org,
     table_create_repo,
-    table_create_commit,
+    table_create_commits,
     table_create_payload,
     table_create_event
 ]
@@ -99,7 +99,7 @@ drop_table_queries = [
     table_drop_org,
     table_drop_repo,
     table_drop_payload,
-    table_drop_commit
+    table_drop_commits
 ]
 
 

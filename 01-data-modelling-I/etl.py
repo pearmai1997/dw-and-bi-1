@@ -48,9 +48,8 @@ def process(cur, conn, filepath):
                         INSERT INTO actor (
                             actor_id,
                             login,
-                            gravatar_id,
                             avatar_url
-                        ) VALUES ('{each["actor"]["id"]}', '{each["actor"]["login"]}','{each["actor"].get("gravatar_id", "")}'
+                        ) VALUES ('{each["actor"]["id"]}', '{each["actor"]["login"]}'
                         ,'{each["actor"].get("avatar_url", "")}')
                         ON CONFLICT (actor_id) DO NOTHING
                     """
@@ -64,10 +63,8 @@ def process(cur, conn, filepath):
                         INSERT INTO org (
                             org_id,
                             login,
-                            gravatar_id,
                             avatar_url
-                        ) VALUES ('{each["org"]["id"]}', '{each["org"]["login"]}','{each["org"]['gravatar_id']}'
-                        ,'{each["org"]["avatar_url"]}')
+                        ) VALUES ('{each["org"]["id"]}', '{each["org"]["login"]}','{each["org"]["avatar_url"]}')
                         ON CONFLICT (org_id) DO NOTHING
                     """
                     cur.execute(insert_statement)
@@ -93,47 +90,38 @@ def process(cur, conn, filepath):
                     insert_statement = f"""
                         INSERT INTO payload (
                             payload_push_id,
-                            action,
-                            node_id,
-                            type,
-                            number,
-                            title,
-                            commits_sha
-                        ) VALUES ('{each["payload"]["push_id"]}', '{each["payload"]["action"]}','{each["payload"]["node_id"]}',
-                        '{each["payload"].get("type", "")}','{each["payload"].get("number", 0)}','{each["payload"].get("title", "")}'
-                        ,'{each["commits"]["sha"]}')
+                            payload_size,
+                            payload_ref
+                        ) VALUES ('{each["payload"]["push_id"]}', '{each["payload"]["size"]}','{each["payload"]["ref"]}')
                         ON CONFLICT (payload_push_id) DO NOTHING
                     """
                     cur.execute(insert_statement)
                 except Exception as e:
                     print(f"Error inserting into payload table: {e}")
 
-                try:
-                    # Insert data into tables here
-                    insert_statement = f"""
-                        INSERT INTO commits (
-                            commits_sha,
-                            name,
-                            distinct
-                        ) VALUES ('{each["commits"]["sha"]}', '{each["commits"]["name"]}', '{each["commits"]["distinct"]})
-                        ON CONFLICT (commits_sha) DO NOTHING
-                    """
-                    cur.execute(insert_statement)
-                except Exception as e:
-                    print(f"Error inserting into commits table: {e}")
 
+
+                try:
+                    org_id = each["org"]["id"]
+                except:
+                    org_id = None
+        
                 try:
                     # Insert data into tables here
                     insert_statement = f"""
                         INSERT INTO event (
                             event_id,
                             event_type,
-                            event_url,
                             public,
-                            created_at
-                        ) VALUES ('{each["id"]}', '{each["type"]}','{each["events_url"]}'
+                            created_at,
+                            actor_id,
+                            repo_id,
+                            payload_push_id,
+                            org_id
+                        ) VALUES ('{each["id"]}', '{each["type"]}'
                         ,'{each["public"]}','{each["created_at"]}',
-                        '{each["commits"]["sha"]}','{each["payload"]["push_id"]}','{each["repo"]["id"]}','{each["org"]["id"]}','{each["actor"]["id"]}')
+                        '{each["actor"]["id"]}',
+                        '{each["repo"]["id"]}','{each["payload"]["push_id"]}','{org_id}')
                         ON CONFLICT (event_id) DO NOTHING
                     """
                     cur.execute(insert_statement)

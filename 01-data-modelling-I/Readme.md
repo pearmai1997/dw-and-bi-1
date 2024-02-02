@@ -63,3 +63,6 @@ $ python create_tables.py
 ```
 $ python etl.py
 ```
+![image](https://github.com/Fooklnwza007/dw-and-bi/assets/131597296/1b9d1bbe-b947-440b-9b91-9337df464d17)
+
+

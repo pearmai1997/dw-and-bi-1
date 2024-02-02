@@ -1,5 +1,5 @@
 ## Data model
-https://github.com/Fooklnwza007/dw-and-bi/edit/main/01-data-modelling-I/Readme.md#:~:text=Data%20model-,diagram,-.png
+[Data model diagram](https://github.com/Fooklnwza007/dw-and-bi/blob/main/01-data-modelling-I/Data%20model%20diagram.png)
 <br>
 <br>
 

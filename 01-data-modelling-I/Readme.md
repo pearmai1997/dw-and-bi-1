@@ -53,9 +53,8 @@ $ docker-compose up
 $ python create_tables.py
 ```
 
-![image](https://github.com/Fooklnwza007/dw-and-bi/assets/131597296/4269566d-0d94-4074-abce-774553c0c6fb)
+![image](https://github.com/Fooklnwza007/dw-and-bi/assets/131597296/71fb7d4d-24bf-44f7-9b66-0311808ef60c)
 
-![image](https://github.com/Fooklnwza007/dw-and-bi/assets/131597296/600bba61-bd66-48ab-879b-6b8acb19566a)
 
 
 

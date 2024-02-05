@@ -48,7 +48,7 @@ $ docker-compose up
 ![image](https://github.com/Fooklnwza007/dw-and-bi/assets/131597296/6840d98c-637d-4980-a7b9-50714371d3e3)
 
 
-**Step 06** การสร้าง Table ใน Database จะต้องรันด้วย create_tables.py และเขียน code ของ PostgresSQL
+**Step 06** การสร้าง Table ใน Database จะต้องรันด้วย create_tables.py และเขียนด้วย code ของ PostgresSQL
 ```
 $ python create_tables.py
 ```
@@ -58,7 +58,7 @@ $ python create_tables.py
 
 
 
-**Step 07** ในการเติมข้อมูลลงใน Table จะต้องทำการ coding ด้วย etl.py
+**Step 07** ในการเติมข้อมูลลงใน Table จะต้องทำการ coding ใน etl.py
 ```
 $ python etl.py
 ```

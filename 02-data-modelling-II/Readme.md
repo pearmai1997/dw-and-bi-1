@@ -1,3 +1,11 @@
+## Data model
+![image](https://github.com/Fooklnwza007/dw-and-bi/assets/131597296/7dd507c8-2ab3-482b-a4dd-95db365c4dde)
+
+<br>
+<br>
+
+## Documentation
+
 1. เปลี่ยน Directory ให้อยู่ใน Folder 02-data-modelling-II
 ```
 $ cd 02-data-modelling-II

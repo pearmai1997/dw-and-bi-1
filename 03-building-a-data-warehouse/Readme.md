@@ -63,6 +63,8 @@ project_id มาจาก project name บน Bigquery หรือ สาม�
 ```
 $ python etl.py
 ```
+![image](https://github.com/Fooklnwza007/dw-and-bi/assets/131597296/6614add8-c340-41d5-9246-96d508e10c70)
+
 ![image](https://github.com/Fooklnwza007/dw-and-bi/assets/131597296/541c96e7-0a5d-4c90-ab64-608429e37f4d)
 
 ![image](https://github.com/Fooklnwza007/dw-and-bi/assets/131597296/6e44caf6-d69f-406e-bfde-a04b9459e684)

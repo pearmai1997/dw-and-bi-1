@@ -1,0 +1,14 @@
+[2024-04-08T08:02:22.918+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dog_api_pipeline.get_dog_api manual__2024-04-08T07:55:22.662689+00:00 [queued]>
+[2024-04-08T08:02:22.924+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dog_api_pipeline.get_dog_api manual__2024-04-08T07:55:22.662689+00:00 [queued]>
+[2024-04-08T08:02:22.924+0000] {taskinstance.py:2193} INFO - Starting attempt 5 of 5
+[2024-04-08T08:02:22.939+0000] {taskinstance.py:2217} INFO - Executing <Task(PythonOperator): get_dog_api> on 2024-04-08 07:55:22.662689+00:00
+[2024-04-08T08:02:22.946+0000] {standard_task_runner.py:60} INFO - Started process 42719 to run task
+[2024-04-08T08:02:22.949+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'dog_api_pipeline', 'get_dog_api', 'manual__2024-04-08T07:55:22.662689+00:00', '--job-id', '11', '--raw', '--subdir', 'DAGS_FOLDER/dog_api_pipeline.py', '--cfg-path', '/tmp/tmphvtp0yrz']
+[2024-04-08T08:02:22.951+0000] {standard_task_runner.py:88} INFO - Job 11: Subtask get_dog_api
+[2024-04-08T08:02:22.992+0000] {task_command.py:423} INFO - Running <TaskInstance: dog_api_pipeline.get_dog_api manual__2024-04-08T07:55:22.662689+00:00 [running]> on host 8056db226622
+[2024-04-08T08:02:23.071+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dog_api_pipeline' AIRFLOW_CTX_TASK_ID='get_dog_api' AIRFLOW_CTX_EXECUTION_DATE='2024-04-08T07:55:22.662689+00:00' AIRFLOW_CTX_TRY_NUMBER='5' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-04-08T07:55:22.662689+00:00'
+[2024-04-08T08:02:23.570+0000] {dog_api_pipeline.py:15} INFO - {'message': 'https://images.dog.ceo/breeds/mastiff-tibetan/n02108551_1091.jpg', 'status': 'success'}
+[2024-04-08T08:02:23.572+0000] {python.py:202} INFO - Done. Returned value was: None
+[2024-04-08T08:02:23.587+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=dog_api_pipeline, task_id=get_dog_api, execution_date=20240408T075522, start_date=20240408T080222, end_date=20240408T080223
+[2024-04-08T08:02:23.651+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-04-08T08:02:23.679+0000] {taskinstance.py:3312} INFO - 0 downstream tasks scheduled from follow-on schedule check

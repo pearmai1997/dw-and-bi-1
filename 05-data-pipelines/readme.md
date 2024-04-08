@@ -29,6 +29,6 @@ start >> [get_files, create_tables] >> process >> end
 ![image](https://github.com/Fooklnwza007/dw-and-bi/assets/131597296/8651764c-acf2-4c20-b78b-2752a85056ed)
 
 5. ปิดการทำงาน docker
-6. ```sh
+```sh
 docker compose down
 ```

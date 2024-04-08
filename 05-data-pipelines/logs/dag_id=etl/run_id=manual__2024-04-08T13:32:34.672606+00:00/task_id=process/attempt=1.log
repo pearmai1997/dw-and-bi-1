@@ -1,0 +1,74 @@
+[2024-04-08T13:32:40.960+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl.process manual__2024-04-08T13:32:34.672606+00:00 [queued]>
+[2024-04-08T13:32:40.966+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl.process manual__2024-04-08T13:32:34.672606+00:00 [queued]>
+[2024-04-08T13:32:40.967+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2024-04-08T13:32:40.981+0000] {taskinstance.py:2217} INFO - Executing <Task(PythonOperator): process> on 2024-04-08 13:32:34.672606+00:00
+[2024-04-08T13:32:40.989+0000] {standard_task_runner.py:60} INFO - Started process 216143 to run task
+[2024-04-08T13:32:40.992+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'etl', 'process', 'manual__2024-04-08T13:32:34.672606+00:00', '--job-id', '53', '--raw', '--subdir', 'DAGS_FOLDER/etl.py', '--cfg-path', '/tmp/tmpvkhx60zb']
+[2024-04-08T13:32:40.994+0000] {standard_task_runner.py:88} INFO - Job 53: Subtask process
+[2024-04-08T13:32:41.044+0000] {task_command.py:423} INFO - Running <TaskInstance: etl.process manual__2024-04-08T13:32:34.672606+00:00 [running]> on host 8056db226622
+[2024-04-08T13:32:41.211+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl' AIRFLOW_CTX_TASK_ID='process' AIRFLOW_CTX_EXECUTION_DATE='2024-04-08T13:32:34.672606+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-04-08T13:32:34.672606+00:00'
+[2024-04-08T13:32:41.276+0000] {base.py:83} INFO - Using connection ID 'my_postgres_conn' for task execution.
+[2024-04-08T13:32:41.322+0000] {logging_mixin.py:188} INFO - 23487963576 WatchEvent 44167236 evilgaoshu 6296790 spring-projects/spring-boot 2022-08-17T15:52:40Z
+[2024-04-08T13:32:41.326+0000] {logging_mixin.py:188} INFO - 23487963624 CreateEvent 111333037 gurram47 525860969 gurram47/AP20110010620-CS306-L 2022-08-17T15:52:40Z
+[2024-04-08T13:32:41.327+0000] {logging_mixin.py:188} INFO - 23487963529 PushEvent 65502770 afbeltranr 350706029 afbeltranr/Agrilab2 2022-08-17T15:52:40Z
+[2024-04-08T13:32:41.328+0000] {logging_mixin.py:188} INFO - 23487963558 IssueCommentEvent 99458559 karla-vm 226399669 CMSgov/cms-carts-seds 2022-08-17T15:52:40Z https://api.github.com/repos/CMSgov/cms-carts-seds/issues/3650
+[2024-04-08T13:32:41.328+0000] {logging_mixin.py:188} INFO - 23487963581 PullRequestEvent 3787410 hsluoyz 521980272 casdoor/casdoor-chrome-extension 2022-08-17T15:52:40Z
+[2024-04-08T13:32:41.329+0000] {logging_mixin.py:188} INFO - 23487963532 PushEvent 11596368 mnw1020 438998478 mnw1020/obsidian 2022-08-17T15:52:40Z
+[2024-04-08T13:32:41.330+0000] {logging_mixin.py:188} INFO - 23487963524 PushEvent 82401504 ikjo93 525362201 ikjo93/Data-Structure 2022-08-17T15:52:40Z
+[2024-04-08T13:32:41.331+0000] {logging_mixin.py:188} INFO - 23487963526 PushEvent 60316309 Gabe616 500139646 Gabe616/ObbyCreatorMusicList 2022-08-17T15:52:40Z
+[2024-04-08T13:32:41.332+0000] {logging_mixin.py:188} INFO - 23487963492 PushEvent 37953029 BadProfessor 268298723 BadProfessor/INL 2022-08-17T15:52:40Z
+[2024-04-08T13:32:41.332+0000] {logging_mixin.py:188} INFO - 23487963504 DeleteEvent 28701858 allanrg4 399546191 ALMA-FUNDEGUA/vacunasgt 2022-08-17T15:52:40Z
+[2024-04-08T13:32:41.333+0000] {logging_mixin.py:188} INFO - 23487963536 PullRequestReviewEvent 22668539 QGarchery 512700417 morpho-dao/morpho-utils 2022-08-17T15:52:40Z
+[2024-04-08T13:32:41.334+0000] {logging_mixin.py:188} INFO - 23487963495 CreateEvent 111433069 Diyouf 525860287 Diyouf/newpage.github.io 2022-08-17T15:52:40Z
+[2024-04-08T13:32:41.335+0000] {logging_mixin.py:188} INFO - 23487963522 PushEvent 100686237 tiltingpenguin 522510250 tiltingpenguin/uyuni 2022-08-17T15:52:40Z
+[2024-04-08T13:32:41.336+0000] {logging_mixin.py:188} INFO - 23487963444 PushEvent 111448530 igrek-ovs 525859727 igrek-ovs/igrek-ovs.github.io 2022-08-17T15:52:40Z
+[2024-04-08T13:32:41.337+0000] {logging_mixin.py:188} INFO - 23487963462 PullRequestEvent 86944161 cchanmi 509700187 TeamDearToday/Deartoday-iOS 2022-08-17T15:52:40Z
+[2024-04-08T13:32:41.347+0000] {logging_mixin.py:188} INFO - 23487963480 IssuesEvent 10712109 mvashishtha 138224079 modin-project/modin 2022-08-17T15:52:40Z
+[2024-04-08T13:32:41.347+0000] {logging_mixin.py:188} INFO - 23487963457 PushEvent 368735 na4zagin3 495043847 na4zagin3/satyrographos-repo-alpha 2022-08-17T15:52:40Z
+[2024-04-08T13:32:41.348+0000] {logging_mixin.py:188} INFO - 23487963413 PushEvent 55003092 xsidc 525476229 xsidc/monmiao 2022-08-17T15:52:40Z
+[2024-04-08T13:32:41.349+0000] {logging_mixin.py:188} INFO - 23487963429 PushEvent 17953978 kkukelka 435120097 kkukelka/nft-gallery 2022-08-17T15:52:40Z
+[2024-04-08T13:32:41.350+0000] {logging_mixin.py:188} INFO - 23487963448 PushEvent 94136524 Sidalvik 484665561 Sidalvik/005-Sidalvik-FrontEnd-Cargo-project 2022-08-17T15:52:40Z
+[2024-04-08T13:32:41.350+0000] {logging_mixin.py:188} INFO - 23487963440 PushEvent 13433317 qJkee 483328134 qJkee/cluster-config-operator 2022-08-17T15:52:40Z
+[2024-04-08T13:32:41.351+0000] {logging_mixin.py:188} INFO - 23487963411 IssueCommentEvent 10712109 mvashishtha 138224079 modin-project/modin 2022-08-17T15:52:40Z https://api.github.com/repos/modin-project/modin/issues/1110
+[2024-04-08T13:32:41.352+0000] {logging_mixin.py:188} INFO - 23487963456 IssueCommentEvent 37929162 mergify[bot] 399070715 majacQ/juicefs 2022-08-17T15:52:40Z https://api.github.com/repos/majacQ/juicefs/issues/35
+[2024-04-08T13:32:41.353+0000] {logging_mixin.py:188} INFO - 23487963426 WatchEvent 44158642 exqlnet 45356931 bwmarrin/discordgo 2022-08-17T15:52:40Z
+[2024-04-08T13:32:41.353+0000] {logging_mixin.py:188} INFO - 23487963471 PullRequestEvent 19955562 lindseyburnett 176802984 RedHatInsights/rhsm-subscriptions 2022-08-17T15:52:40Z
+[2024-04-08T13:32:41.354+0000] {logging_mixin.py:188} INFO - 23487963425 CreateEvent 111345762 wwwuuid2com28 525860966 wwwuuid2com28/22_11948 2022-08-17T15:52:40Z
+[2024-04-08T13:32:41.355+0000] {logging_mixin.py:188} INFO - 23487963368 PushEvent 30538765 signcla-test-unsigned 409344435 google-test2/signclav2-probe-repo 2022-08-17T15:52:40Z
+[2024-04-08T13:32:41.356+0000] {logging_mixin.py:188} INFO - 23487963384 PushEvent 8517910 LombiqBot 86929735 Lombiq/Orchard 2022-08-17T15:52:40Z
+[2024-04-08T13:32:41.360+0000] {logging_mixin.py:188} INFO - 23487963376 PushEvent 109001160 HARPHUNA 525552996 HARPHUNA/grpc-SwiftPM 2022-08-17T15:52:40Z
+[2024-04-08T13:32:41.361+0000] {logging_mixin.py:188} INFO - 23487963366 PushEvent 686971 khurtwilliams 288543809 khurtwilliams/microblog 2022-08-17T15:52:40Z
+[2024-04-08T13:32:41.363+0000] {logging_mixin.py:188} INFO - 23487929637 IssueCommentEvent 1696078 sukhada 75340147 350org/ak_intl_v3 2022-08-17T15:51:05Z https://api.github.com/repos/350org/ak_intl_v3/issues/332
+[2024-04-08T13:32:41.364+0000] {logging_mixin.py:188} INFO - 23487929676 PushEvent 66924041 yousabu 525526680 yousabu/ansible_rhce 2022-08-17T15:51:05Z
+[2024-04-08T13:32:41.365+0000] {logging_mixin.py:188} INFO - 23487929674 PushEvent 74971347 MathisGD 512700417 morpho-dao/morpho-utils 2022-08-17T15:51:05Z
+[2024-04-08T13:32:41.367+0000] {logging_mixin.py:188} INFO - 23487929661 PushEvent 91143053 BR-Junior 525851446 BR-Junior/crud-com-vue-e-quasar 2022-08-17T15:51:05Z
+[2024-04-08T13:32:41.367+0000] {logging_mixin.py:188} INFO - 23487929682 PushEvent 60825784 predictcrypto 505029866 predictcrypto/pins 2022-08-17T15:51:05Z
+[2024-04-08T13:32:41.368+0000] {logging_mixin.py:188} INFO - 23487929673 PushEvent 102357035 kazukimikami 525845306 kazukimikami/reservation 2022-08-17T15:51:05Z
+[2024-04-08T13:32:41.369+0000] {logging_mixin.py:188} INFO - 23487929588 PushEvent 46447321 allcontributors[bot] 274724694 dendronhq/dendron 2022-08-17T15:51:05Z
+[2024-04-08T13:32:41.370+0000] {logging_mixin.py:188} INFO - 23487929636 CreateEvent 41898282 github-actions[bot] 523780252 tiller1010/silverstripe-spam-module 2022-08-17T15:51:05Z
+[2024-04-08T13:32:41.371+0000] {logging_mixin.py:188} INFO - 23487929580 IssuesEvent 21972349 sozysozbot 524701461 sozysozbot/mikanos 2022-08-17T15:51:05Z
+[2024-04-08T13:32:41.372+0000] {logging_mixin.py:188} INFO - 23487929591 PushEvent 17869732 moiify 164541747 moiify/AutoGreen 2022-08-17T15:51:05Z
+[2024-04-08T13:32:41.373+0000] {logging_mixin.py:188} INFO - 23487929533 PushEvent 37043957 Callithrix-omics 524655561 Callithrix-omics/Callithrix-omics.github.io 2022-08-17T15:51:05Z
+[2024-04-08T13:32:41.374+0000] {logging_mixin.py:188} INFO - 23487929573 PushEvent 22376627 datho7561 264221410 datho7561/quarkus-ls 2022-08-17T15:51:05Z
+[2024-04-08T13:32:41.375+0000] {logging_mixin.py:188} INFO - 23487929349 PushEvent 90624848 ofzlo 472789273 Sooktoring/Sooktoring-Android 2022-08-17T15:51:04Z
+[2024-04-08T13:32:41.376+0000] {logging_mixin.py:188} INFO - 23487929578 PushEvent 98659638 edwardzuniga 487950724 edwardzuniga/holbertonschool-higher_level_programming 2022-08-17T15:51:05Z
+[2024-04-08T13:32:41.377+0000] {logging_mixin.py:188} INFO - 23487929597 IssueCommentEvent 32714304 0xcadams 432870871 livepeer/explorer 2022-08-17T15:51:05Z https://api.github.com/repos/livepeer/explorer/issues/165
+[2024-04-08T13:32:41.379+0000] {logging_mixin.py:188} INFO - 23487929522 ReleaseEvent 41898282 github-actions[bot] 523780252 tiller1010/silverstripe-spam-module 2022-08-17T15:51:05Z
+[2024-04-08T13:32:41.380+0000] {logging_mixin.py:188} INFO - 23487929560 PushEvent 111369888 Mahalderk 525845966 Mahalderk/CV 2022-08-17T15:51:05Z
+[2024-04-08T13:32:41.381+0000] {logging_mixin.py:188} INFO - 23487929536 PushEvent 5146167 markbush 522475355 markbush/Smalltalk-80-CompilerLib 2022-08-17T15:51:05Z
+[2024-04-08T13:32:41.385+0000] {logging_mixin.py:188} INFO - 23487929501 DeleteEvent 34882892 balena-ci 280075452 product-os/jellyfish-worker 2022-08-17T15:51:05Z
+[2024-04-08T13:32:41.387+0000] {logging_mixin.py:188} INFO - 23487929523 PushEvent 12437240 chengzhong001 524300625 chengzhong001/cpp-examples 2022-08-17T15:51:05Z
+[2024-04-08T13:32:41.388+0000] {logging_mixin.py:188} INFO - 23487929494 PushEvent 39814207 pull[bot] 502695999 kybru91/vscode-languageserver-node 2022-08-17T15:51:05Z
+[2024-04-08T13:32:41.389+0000] {logging_mixin.py:188} INFO - 23487929532 PushEvent 75855221 fathozt 381424857 fathozt/MyProject 2022-08-17T15:51:05Z
+[2024-04-08T13:32:41.391+0000] {logging_mixin.py:188} INFO - 23487929508 CreateEvent 90800936 ibrahimalangri 525860418 ibrahimalangri/KUn 2022-08-17T15:51:05Z
+[2024-04-08T13:32:41.399+0000] {logging_mixin.py:188} INFO - 23487929447 PushEvent 102809970 InonAngel98 507821009 web-application-app/gigosRate 2022-08-17T15:51:05Z
+[2024-04-08T13:32:41.401+0000] {logging_mixin.py:188} INFO - 23487929496 DeleteEvent 111434456 DmytroKova 525800293 DmytroKova/TUTORIAL 2022-08-17T15:51:05Z
+[2024-04-08T13:32:41.406+0000] {logging_mixin.py:188} INFO - 23487929420 PushEvent 5981249 brianway 55965971 brianway/algorithms-learning 2022-08-17T15:51:05Z
+[2024-04-08T13:32:41.407+0000] {logging_mixin.py:188} INFO - 23487929439 PushEvent 41898282 github-actions[bot] 266811533 wizche/lema-observatory 2022-08-17T15:51:05Z
+[2024-04-08T13:32:41.408+0000] {logging_mixin.py:188} INFO - 23487929452 PushEvent 23216921 adamsorbie 406699027 adamsorbie/Stroke_Microbiota_reproducibility 2022-08-17T15:51:05Z
+[2024-04-08T13:32:41.409+0000] {logging_mixin.py:188} INFO - 23487929428 IssuesEvent 21071133 justbecoder 501154542 justbecoder/react-router-middleware-plus 2022-08-17T15:51:05Z
+[2024-04-08T13:32:41.410+0000] {logging_mixin.py:188} INFO - 23487929425 IssueCommentEvent 28898909 dislbenn 239809522 stolostron/search-e2e-test 2022-08-17T15:51:05Z https://api.github.com/repos/stolostron/search-e2e-test/issues/293
+[2024-04-08T13:32:41.411+0000] {python.py:202} INFO - Done. Returned value was: None
+[2024-04-08T13:32:41.422+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=etl, task_id=process, execution_date=20240408T133234, start_date=20240408T133240, end_date=20240408T133241
+[2024-04-08T13:32:41.467+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-04-08T13:32:41.524+0000] {taskinstance.py:3312} INFO - 0 downstream tasks scheduled from follow-on schedule check

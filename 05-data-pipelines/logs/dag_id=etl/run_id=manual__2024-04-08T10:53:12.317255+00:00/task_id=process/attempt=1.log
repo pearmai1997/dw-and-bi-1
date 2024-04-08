@@ -1,0 +1,13 @@
+[2024-04-08T10:53:19.508+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl.process manual__2024-04-08T10:53:12.317255+00:00 [queued]>
+[2024-04-08T10:53:19.514+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl.process manual__2024-04-08T10:53:12.317255+00:00 [queued]>
+[2024-04-08T10:53:19.515+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2024-04-08T10:53:19.529+0000] {taskinstance.py:2217} INFO - Executing <Task(PythonOperator): process> on 2024-04-08 10:53:12.317255+00:00
+[2024-04-08T10:53:19.537+0000] {standard_task_runner.py:60} INFO - Started process 131965 to run task
+[2024-04-08T10:53:19.544+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'etl', 'process', 'manual__2024-04-08T10:53:12.317255+00:00', '--job-id', '21', '--raw', '--subdir', 'DAGS_FOLDER/etl.py', '--cfg-path', '/tmp/tmp_rwwrwhq']
+[2024-04-08T10:53:19.545+0000] {standard_task_runner.py:88} INFO - Job 21: Subtask process
+[2024-04-08T10:53:19.628+0000] {task_command.py:423} INFO - Running <TaskInstance: etl.process manual__2024-04-08T10:53:12.317255+00:00 [running]> on host 8056db226622
+[2024-04-08T10:53:19.795+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl' AIRFLOW_CTX_TASK_ID='process' AIRFLOW_CTX_EXECUTION_DATE='2024-04-08T10:53:12.317255+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-04-08T10:53:12.317255+00:00'
+[2024-04-08T10:53:19.798+0000] {python.py:202} INFO - Done. Returned value was: None
+[2024-04-08T10:53:19.816+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=etl, task_id=process, execution_date=20240408T105312, start_date=20240408T105319, end_date=20240408T105319
+[2024-04-08T10:53:19.876+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-04-08T10:53:19.893+0000] {taskinstance.py:3312} INFO - 0 downstream tasks scheduled from follow-on schedule check

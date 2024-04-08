@@ -1,0 +1,32 @@
+[2024-04-08T11:49:02.206+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl.process manual__2024-04-08T10:53:12.317255+00:00 [queued]>
+[2024-04-08T11:49:02.212+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl.process manual__2024-04-08T10:53:12.317255+00:00 [queued]>
+[2024-04-08T11:49:02.213+0000] {taskinstance.py:2193} INFO - Starting attempt 13 of 13
+[2024-04-08T11:49:02.227+0000] {taskinstance.py:2217} INFO - Executing <Task(PythonOperator): process> on 2024-04-08 10:53:12.317255+00:00
+[2024-04-08T11:49:02.234+0000] {standard_task_runner.py:60} INFO - Started process 161434 to run task
+[2024-04-08T11:49:02.237+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'etl', 'process', 'manual__2024-04-08T10:53:12.317255+00:00', '--job-id', '40', '--raw', '--subdir', 'DAGS_FOLDER/etl.py', '--cfg-path', '/tmp/tmpjg9b3ck_']
+[2024-04-08T11:49:02.239+0000] {standard_task_runner.py:88} INFO - Job 40: Subtask process
+[2024-04-08T11:49:02.280+0000] {task_command.py:423} INFO - Running <TaskInstance: etl.process manual__2024-04-08T10:53:12.317255+00:00 [running]> on host 8056db226622
+[2024-04-08T11:49:02.352+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl' AIRFLOW_CTX_TASK_ID='process' AIRFLOW_CTX_EXECUTION_DATE='2024-04-08T10:53:12.317255+00:00' AIRFLOW_CTX_TRY_NUMBER='13' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-04-08T10:53:12.317255+00:00'
+[2024-04-08T11:49:02.366+0000] {taskinstance.py:2731} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 444, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 414, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 200, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 217, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/etl.py", line 61, in _process
+    conn = hook.get_conn()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/postgres/hooks/postgres.py", line 131, in get_conn
+    conn = deepcopy(self.connection or self.get_connection(conn_id))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/hooks/base.py", line 82, in get_connection
+    conn = Connection.get_connection_from_secrets(conn_id)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/connection.py", line 514, in get_connection_from_secrets
+    raise AirflowNotFoundException(f"The conn_id `{conn_id}` isn't defined")
+airflow.exceptions.AirflowNotFoundException: The conn_id `my_postgres` isn't defined
+[2024-04-08T11:49:02.369+0000] {taskinstance.py:1149} INFO - Marking task as FAILED. dag_id=etl, task_id=process, execution_date=20240408T105312, start_date=20240408T114902, end_date=20240408T114902
+[2024-04-08T11:49:02.386+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 40 for task process (The conn_id `my_postgres` isn't defined; 161434)
+[2024-04-08T11:49:02.410+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-04-08T11:49:02.426+0000] {taskinstance.py:3312} INFO - 0 downstream tasks scheduled from follow-on schedule check

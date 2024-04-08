@@ -1,0 +1,32 @@
+[2024-04-08T11:48:59.128+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl.create_tables scheduled__2024-04-07T00:00:00+00:00 [queued]>
+[2024-04-08T11:48:59.134+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl.create_tables scheduled__2024-04-07T00:00:00+00:00 [queued]>
+[2024-04-08T11:48:59.134+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2024-04-08T11:48:59.153+0000] {taskinstance.py:2217} INFO - Executing <Task(PythonOperator): create_tables> on 2024-04-07 00:00:00+00:00
+[2024-04-08T11:48:59.161+0000] {standard_task_runner.py:60} INFO - Started process 161421 to run task
+[2024-04-08T11:48:59.168+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'etl', 'create_tables', 'scheduled__2024-04-07T00:00:00+00:00', '--job-id', '39', '--raw', '--subdir', 'DAGS_FOLDER/etl.py', '--cfg-path', '/tmp/tmp89a09lbt']
+[2024-04-08T11:48:59.171+0000] {standard_task_runner.py:88} INFO - Job 39: Subtask create_tables
+[2024-04-08T11:48:59.219+0000] {task_command.py:423} INFO - Running <TaskInstance: etl.create_tables scheduled__2024-04-07T00:00:00+00:00 [running]> on host 8056db226622
+[2024-04-08T11:48:59.287+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl' AIRFLOW_CTX_TASK_ID='create_tables' AIRFLOW_CTX_EXECUTION_DATE='2024-04-07T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-04-07T00:00:00+00:00'
+[2024-04-08T11:48:59.301+0000] {taskinstance.py:2731} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 444, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 414, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 200, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 217, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/etl.py", line 31, in _create_tables
+    conn = hook.get_conn()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/postgres/hooks/postgres.py", line 131, in get_conn
+    conn = deepcopy(self.connection or self.get_connection(conn_id))
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/hooks/base.py", line 82, in get_connection
+    conn = Connection.get_connection_from_secrets(conn_id)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/connection.py", line 514, in get_connection_from_secrets
+    raise AirflowNotFoundException(f"The conn_id `{conn_id}` isn't defined")
+airflow.exceptions.AirflowNotFoundException: The conn_id `my_postgres` isn't defined
+[2024-04-08T11:48:59.304+0000] {taskinstance.py:1149} INFO - Marking task as FAILED. dag_id=etl, task_id=create_tables, execution_date=20240407T000000, start_date=20240408T114859, end_date=20240408T114859
+[2024-04-08T11:48:59.316+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 39 for task create_tables (The conn_id `my_postgres` isn't defined; 161421)
+[2024-04-08T11:48:59.337+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-04-08T11:48:59.355+0000] {taskinstance.py:3312} INFO - 0 downstream tasks scheduled from follow-on schedule check

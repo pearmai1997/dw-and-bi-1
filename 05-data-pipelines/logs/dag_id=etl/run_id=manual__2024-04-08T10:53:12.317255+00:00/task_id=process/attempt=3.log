@@ -1,0 +1,224 @@
+[2024-04-08T11:07:00.801+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl.process manual__2024-04-08T10:53:12.317255+00:00 [queued]>
+[2024-04-08T11:07:00.807+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl.process manual__2024-04-08T10:53:12.317255+00:00 [queued]>
+[2024-04-08T11:07:00.807+0000] {taskinstance.py:2193} INFO - Starting attempt 3 of 3
+[2024-04-08T11:07:00.822+0000] {taskinstance.py:2217} INFO - Executing <Task(PythonOperator): process> on 2024-04-08 10:53:12.317255+00:00
+[2024-04-08T11:07:00.829+0000] {standard_task_runner.py:60} INFO - Started process 139251 to run task
+[2024-04-08T11:07:00.832+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'etl', 'process', 'manual__2024-04-08T10:53:12.317255+00:00', '--job-id', '28', '--raw', '--subdir', 'DAGS_FOLDER/etl.py', '--cfg-path', '/tmp/tmprhfcm0_q']
+[2024-04-08T11:07:00.834+0000] {standard_task_runner.py:88} INFO - Job 28: Subtask process
+[2024-04-08T11:07:00.874+0000] {task_command.py:423} INFO - Running <TaskInstance: etl.process manual__2024-04-08T10:53:12.317255+00:00 [running]> on host 8056db226622
+[2024-04-08T11:07:00.950+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl' AIRFLOW_CTX_TASK_ID='process' AIRFLOW_CTX_EXECUTION_DATE='2024-04-08T10:53:12.317255+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-04-08T10:53:12.317255+00:00'
+[2024-04-08T11:07:00.953+0000] {logging_mixin.py:188} INFO - {'conf': <***.configuration.AirflowConfigParser object at 0x7ff8e57f2d30>, 'dag': <DAG: etl>, 'dag_run': <DagRun etl @ 2024-04-08 10:53:12.317255+00:00: manual__2024-04-08T10:53:12.317255+00:00, state:running, queued_at: 2024-04-08 11:06:59.365887+00:00. externally triggered: True>, 'data_interval_end': DateTime(2024, 4, 8, 0, 0, 0, tzinfo=Timezone('UTC')), 'data_interval_start': DateTime(2024, 4, 7, 0, 0, 0, tzinfo=Timezone('UTC')), 'ds': '2024-04-08', 'ds_nodash': '20240408', 'execution_date': <Proxy at 0x7ff8cf930dc0 with factory functools.partial(<function lazy_mapping_from_context.<locals>._deprecated_proxy_factory at 0x7ff8cf092310>, 'execution_date', DateTime(2024, 4, 8, 10, 53, 12, 317255, tzinfo=Timezone('UTC')))>, 'expanded_ti_count': None, 'inlets': [], 'logical_date': DateTime(2024, 4, 8, 10, 53, 12, 317255, tzinfo=Timezone('UTC')), 'macros': <module '***.macros' from '/home/***/.local/lib/python3.8/site-packages/***/macros/__init__.py'>, 'next_ds': <Proxy at 0x7ff8cf010640 with factory functools.partial(<function lazy_mapping_from_context.<locals>._deprecated_proxy_factory at 0x7ff8cf092310>, 'next_ds', '2024-04-08')>, 'next_ds_nodash': <Proxy at 0x7ff8cf010100 with factory functools.partial(<function lazy_mapping_from_context.<locals>._deprecated_proxy_factory at 0x7ff8cf092310>, 'next_ds_nodash', '20240408')>, 'next_execution_date': <Proxy at 0x7ff8da224280 with factory functools.partial(<function lazy_mapping_from_context.<locals>._deprecated_proxy_factory at 0x7ff8cf092310>, 'next_execution_date', DateTime(2024, 4, 8, 10, 53, 12, 317255, tzinfo=Timezone('UTC')))>, 'outlets': [], 'params': {}, 'prev_data_interval_start_success': DateTime(2024, 4, 7, 0, 0, 0, tzinfo=Timezone('UTC')), 'prev_data_interval_end_success': DateTime(2024, 4, 8, 0, 0, 0, tzinfo=Timezone('UTC')), 'prev_ds': <Proxy at 0x7ff8da2242c0 with factory functools.partial(<function lazy_mapping_from_context.<locals>._deprecated_proxy_factory at 0x7ff8cf092310>, 'prev_ds', '2024-04-08')>, 'prev_ds_nodash': <Proxy at 0x7ff8da224300 with factory functools.partial(<function lazy_mapping_from_context.<locals>._deprecated_proxy_factory at 0x7ff8cf092310>, 'prev_ds_nodash', '20240408')>, 'prev_execution_date': <Proxy at 0x7ff8da224340 with factory functools.partial(<function lazy_mapping_from_context.<locals>._deprecated_proxy_factory at 0x7ff8cf092310>, 'prev_execution_date', DateTime(2024, 4, 8, 10, 53, 12, 317255, tzinfo=Timezone('UTC')))>, 'prev_execution_date_success': <Proxy at 0x7ff8da224380 with factory functools.partial(<function lazy_mapping_from_context.<locals>._deprecated_proxy_factory at 0x7ff8cf092310>, 'prev_execution_date_success', DateTime(2024, 4, 8, 10, 29, 54, 815147, tzinfo=Timezone('UTC')))>, 'prev_start_date_success': DateTime(2024, 4, 8, 10, 35, 6, 599693, tzinfo=Timezone('UTC')), 'prev_end_date_success': DateTime(2024, 4, 8, 10, 35, 13, 698539, tzinfo=Timezone('UTC')), 'run_id': 'manual__2024-04-08T10:53:12.317255+00:00', 'task': <Task(PythonOperator): process>, 'task_instance': <TaskInstance: etl.process manual__2024-04-08T10:53:12.317255+00:00 [running]>, 'task_instance_key_str': 'etl__process__20240408', 'test_mode': False, 'ti': <TaskInstance: etl.process manual__2024-04-08T10:53:12.317255+00:00 [running]>, 'tomorrow_ds': <Proxy at 0x7ff8da2243c0 with factory functools.partial(<function lazy_mapping_from_context.<locals>._deprecated_proxy_factory at 0x7ff8cf092310>, 'tomorrow_ds', '2024-04-09')>, 'tomorrow_ds_nodash': <Proxy at 0x7ff8da224400 with factory functools.partial(<function lazy_mapping_from_context.<locals>._deprecated_proxy_factory at 0x7ff8cf092310>, 'tomorrow_ds_nodash', '20240409')>, 'triggering_dataset_events': <Proxy at 0x7ff8cf036ac0 with factory <function _get_template_context.<locals>.get_triggering_events at 0x7ff8cf01d4c0>>, 'ts': '2024-04-08T10:53:12.317255+00:00', 'ts_nodash': '20240408T105312', 'ts_nodash_with_tz': '20240408T105312.317255+0000', 'var': {'json': None, 'value': None}, 'conn': None, 'yesterday_ds': <Proxy at 0x7ff8da224440 with factory functools.partial(<function lazy_mapping_from_context.<locals>._deprecated_proxy_factory at 0x7ff8cf092310>, 'yesterday_ds', '2024-04-07')>, 'yesterday_ds_nodash': <Proxy at 0x7ff8da224480 with factory functools.partial(<function lazy_mapping_from_context.<locals>._deprecated_proxy_factory at 0x7ff8cf092310>, 'yesterday_ds_nodash', '20240407')>, 'templates_dict': None}
+[2024-04-08T11:07:00.968+0000] {logging_mixin.py:188} INFO - ['/opt/***/dags/data/github_events_02.json', '/opt/***/dags/data/github_events_01.json']
+[2024-04-08T11:07:00.979+0000] {base.py:83} INFO - Using connection ID 'my_postgres_conn' for task execution.
+[2024-04-08T11:07:00.985+0000] {logging_mixin.py:188} INFO - 23487963576 WatchEvent 44167236 evilgaoshu 6296790 spring-projects/spring-boot 2022-08-17T15:52:40Z
+[2024-04-08T11:07:00.987+0000] {logging_mixin.py:188} INFO - Error inserting into payload table: 'push_id'
+[2024-04-08T11:07:00.988+0000] {logging_mixin.py:188} INFO - Error inserting into event table: 'push_id'
+[2024-04-08T11:07:00.994+0000] {logging_mixin.py:188} INFO - 23487963624 CreateEvent 111333037 gurram47 525860969 gurram47/AP20110010620-CS306-L 2022-08-17T15:52:40Z
+[2024-04-08T11:07:00.995+0000] {logging_mixin.py:188} INFO - Error inserting into org table: 'org'
+[2024-04-08T11:07:00.995+0000] {logging_mixin.py:188} INFO - Error inserting into payload table: 'push_id'
+[2024-04-08T11:07:00.996+0000] {logging_mixin.py:188} INFO - Error inserting into event table: 'push_id'
+[2024-04-08T11:07:01.002+0000] {logging_mixin.py:188} INFO - 23487963529 PushEvent 65502770 afbeltranr 350706029 afbeltranr/Agrilab2 2022-08-17T15:52:40Z
+[2024-04-08T11:07:01.003+0000] {logging_mixin.py:188} INFO - Error inserting into org table: 'org'
+[2024-04-08T11:07:01.005+0000] {logging_mixin.py:188} INFO - Error inserting into event table: insert or update on table "event" violates foreign key constraint "event_org_id_fkey"
+DETAIL:  Key (org_id)=(None) is not present in table "org".
+[2024-04-08T11:07:01.006+0000] {logging_mixin.py:188} INFO - 23487963558 IssueCommentEvent 99458559 karla-vm 226399669 CMSgov/cms-carts-seds 2022-08-17T15:52:40Z
+[2024-04-08T11:07:01.007+0000] {logging_mixin.py:188} INFO - Error inserting into payload table: 'push_id'
+[2024-04-08T11:07:01.007+0000] {logging_mixin.py:188} INFO - Error inserting into event table: 'push_id'
+[2024-04-08T11:07:01.014+0000] {logging_mixin.py:188} INFO - 23487963581 PullRequestEvent 3787410 hsluoyz 521980272 casdoor/casdoor-chrome-extension 2022-08-17T15:52:40Z
+[2024-04-08T11:07:01.015+0000] {logging_mixin.py:188} INFO - Error inserting into payload table: 'push_id'
+[2024-04-08T11:07:01.015+0000] {logging_mixin.py:188} INFO - Error inserting into event table: 'push_id'
+[2024-04-08T11:07:01.020+0000] {logging_mixin.py:188} INFO - 23487963532 PushEvent 11596368 mnw1020 438998478 mnw1020/obsidian 2022-08-17T15:52:40Z
+[2024-04-08T11:07:01.021+0000] {logging_mixin.py:188} INFO - Error inserting into org table: 'org'
+[2024-04-08T11:07:01.022+0000] {logging_mixin.py:188} INFO - Error inserting into event table: insert or update on table "event" violates foreign key constraint "event_org_id_fkey"
+DETAIL:  Key (org_id)=(None) is not present in table "org".
+[2024-04-08T11:07:01.023+0000] {logging_mixin.py:188} INFO - 23487963524 PushEvent 82401504 ikjo93 525362201 ikjo93/Data-Structure 2022-08-17T15:52:40Z
+[2024-04-08T11:07:01.023+0000] {logging_mixin.py:188} INFO - Error inserting into org table: 'org'
+[2024-04-08T11:07:01.025+0000] {logging_mixin.py:188} INFO - Error inserting into event table: insert or update on table "event" violates foreign key constraint "event_org_id_fkey"
+DETAIL:  Key (org_id)=(None) is not present in table "org".
+[2024-04-08T11:07:01.026+0000] {logging_mixin.py:188} INFO - 23487963526 PushEvent 60316309 Gabe616 500139646 Gabe616/ObbyCreatorMusicList 2022-08-17T15:52:40Z
+[2024-04-08T11:07:01.026+0000] {logging_mixin.py:188} INFO - Error inserting into org table: 'org'
+[2024-04-08T11:07:01.027+0000] {logging_mixin.py:188} INFO - Error inserting into event table: insert or update on table "event" violates foreign key constraint "event_org_id_fkey"
+DETAIL:  Key (org_id)=(None) is not present in table "org".
+[2024-04-08T11:07:01.028+0000] {logging_mixin.py:188} INFO - 23487963492 PushEvent 37953029 BadProfessor 268298723 BadProfessor/INL 2022-08-17T15:52:40Z
+[2024-04-08T11:07:01.029+0000] {logging_mixin.py:188} INFO - Error inserting into org table: 'org'
+[2024-04-08T11:07:01.030+0000] {logging_mixin.py:188} INFO - Error inserting into event table: insert or update on table "event" violates foreign key constraint "event_org_id_fkey"
+DETAIL:  Key (org_id)=(None) is not present in table "org".
+[2024-04-08T11:07:01.031+0000] {logging_mixin.py:188} INFO - 23487963504 DeleteEvent 28701858 allanrg4 399546191 ALMA-FUNDEGUA/vacunasgt 2022-08-17T15:52:40Z
+[2024-04-08T11:07:01.032+0000] {logging_mixin.py:188} INFO - Error inserting into payload table: 'push_id'
+[2024-04-08T11:07:01.032+0000] {logging_mixin.py:188} INFO - Error inserting into event table: 'push_id'
+[2024-04-08T11:07:01.039+0000] {logging_mixin.py:188} INFO - 23487963536 PullRequestReviewEvent 22668539 QGarchery 512700417 morpho-dao/morpho-utils 2022-08-17T15:52:40Z
+[2024-04-08T11:07:01.039+0000] {logging_mixin.py:188} INFO - Error inserting into payload table: 'push_id'
+[2024-04-08T11:07:01.040+0000] {logging_mixin.py:188} INFO - Error inserting into event table: 'push_id'
+[2024-04-08T11:07:01.046+0000] {logging_mixin.py:188} INFO - 23487963495 CreateEvent 111433069 Diyouf 525860287 Diyouf/newpage.github.io 2022-08-17T15:52:40Z
+[2024-04-08T11:07:01.046+0000] {logging_mixin.py:188} INFO - Error inserting into org table: 'org'
+[2024-04-08T11:07:01.047+0000] {logging_mixin.py:188} INFO - Error inserting into payload table: 'push_id'
+[2024-04-08T11:07:01.047+0000] {logging_mixin.py:188} INFO - Error inserting into event table: 'push_id'
+[2024-04-08T11:07:01.053+0000] {logging_mixin.py:188} INFO - 23487963522 PushEvent 100686237 tiltingpenguin 522510250 tiltingpenguin/uyuni 2022-08-17T15:52:40Z
+[2024-04-08T11:07:01.054+0000] {logging_mixin.py:188} INFO - Error inserting into org table: 'org'
+[2024-04-08T11:07:01.056+0000] {logging_mixin.py:188} INFO - Error inserting into event table: insert or update on table "event" violates foreign key constraint "event_org_id_fkey"
+DETAIL:  Key (org_id)=(None) is not present in table "org".
+[2024-04-08T11:07:01.056+0000] {logging_mixin.py:188} INFO - 23487963444 PushEvent 111448530 igrek-ovs 525859727 igrek-ovs/igrek-ovs.github.io 2022-08-17T15:52:40Z
+[2024-04-08T11:07:01.057+0000] {logging_mixin.py:188} INFO - Error inserting into org table: 'org'
+[2024-04-08T11:07:01.059+0000] {logging_mixin.py:188} INFO - Error inserting into event table: insert or update on table "event" violates foreign key constraint "event_org_id_fkey"
+DETAIL:  Key (org_id)=(None) is not present in table "org".
+[2024-04-08T11:07:01.059+0000] {logging_mixin.py:188} INFO - 23487963462 PullRequestEvent 86944161 cchanmi 509700187 TeamDearToday/Deartoday-iOS 2022-08-17T15:52:40Z
+[2024-04-08T11:07:01.060+0000] {logging_mixin.py:188} INFO - Error inserting into payload table: 'push_id'
+[2024-04-08T11:07:01.060+0000] {logging_mixin.py:188} INFO - Error inserting into event table: 'push_id'
+[2024-04-08T11:07:01.066+0000] {logging_mixin.py:188} INFO - 23487963480 IssuesEvent 10712109 mvashishtha 138224079 modin-project/modin 2022-08-17T15:52:40Z
+[2024-04-08T11:07:01.067+0000] {logging_mixin.py:188} INFO - Error inserting into payload table: 'push_id'
+[2024-04-08T11:07:01.067+0000] {logging_mixin.py:188} INFO - Error inserting into event table: 'push_id'
+[2024-04-08T11:07:01.073+0000] {logging_mixin.py:188} INFO - 23487963457 PushEvent 368735 na4zagin3 495043847 na4zagin3/satyrographos-repo-alpha 2022-08-17T15:52:40Z
+[2024-04-08T11:07:01.074+0000] {logging_mixin.py:188} INFO - Error inserting into org table: 'org'
+[2024-04-08T11:07:01.075+0000] {logging_mixin.py:188} INFO - Error inserting into event table: insert or update on table "event" violates foreign key constraint "event_org_id_fkey"
+DETAIL:  Key (org_id)=(None) is not present in table "org".
+[2024-04-08T11:07:01.075+0000] {logging_mixin.py:188} INFO - 23487963413 PushEvent 55003092 xsidc 525476229 xsidc/monmiao 2022-08-17T15:52:40Z
+[2024-04-08T11:07:01.076+0000] {logging_mixin.py:188} INFO - Error inserting into org table: 'org'
+[2024-04-08T11:07:01.077+0000] {logging_mixin.py:188} INFO - Error inserting into event table: insert or update on table "event" violates foreign key constraint "event_org_id_fkey"
+DETAIL:  Key (org_id)=(None) is not present in table "org".
+[2024-04-08T11:07:01.077+0000] {logging_mixin.py:188} INFO - 23487963429 PushEvent 17953978 kkukelka 435120097 kkukelka/nft-gallery 2022-08-17T15:52:40Z
+[2024-04-08T11:07:01.078+0000] {logging_mixin.py:188} INFO - Error inserting into org table: 'org'
+[2024-04-08T11:07:01.079+0000] {logging_mixin.py:188} INFO - Error inserting into event table: insert or update on table "event" violates foreign key constraint "event_org_id_fkey"
+DETAIL:  Key (org_id)=(None) is not present in table "org".
+[2024-04-08T11:07:01.080+0000] {logging_mixin.py:188} INFO - 23487963448 PushEvent 94136524 Sidalvik 484665561 Sidalvik/005-Sidalvik-FrontEnd-Cargo-project 2022-08-17T15:52:40Z
+[2024-04-08T11:07:01.080+0000] {logging_mixin.py:188} INFO - Error inserting into org table: 'org'
+[2024-04-08T11:07:01.082+0000] {logging_mixin.py:188} INFO - Error inserting into event table: insert or update on table "event" violates foreign key constraint "event_org_id_fkey"
+DETAIL:  Key (org_id)=(None) is not present in table "org".
+[2024-04-08T11:07:01.083+0000] {logging_mixin.py:188} INFO - 23487963440 PushEvent 13433317 qJkee 483328134 qJkee/cluster-config-operator 2022-08-17T15:52:40Z
+[2024-04-08T11:07:01.084+0000] {logging_mixin.py:188} INFO - Error inserting into org table: 'org'
+[2024-04-08T11:07:01.085+0000] {logging_mixin.py:188} INFO - Error inserting into event table: insert or update on table "event" violates foreign key constraint "event_org_id_fkey"
+DETAIL:  Key (org_id)=(None) is not present in table "org".
+[2024-04-08T11:07:01.086+0000] {logging_mixin.py:188} INFO - 23487963411 IssueCommentEvent 10712109 mvashishtha 138224079 modin-project/modin 2022-08-17T15:52:40Z
+[2024-04-08T11:07:01.088+0000] {logging_mixin.py:188} INFO - Error inserting into payload table: 'push_id'
+[2024-04-08T11:07:01.088+0000] {logging_mixin.py:188} INFO - Error inserting into event table: 'push_id'
+[2024-04-08T11:07:01.088+0000] {logging_mixin.py:188} INFO - 23487963456 IssueCommentEvent 37929162 mergify[bot] 399070715 majacQ/juicefs 2022-08-17T15:52:40Z
+[2024-04-08T11:07:01.089+0000] {logging_mixin.py:188} INFO - Error inserting into payload table: 'push_id'
+[2024-04-08T11:07:01.090+0000] {logging_mixin.py:188} INFO - Error inserting into event table: 'push_id'
+[2024-04-08T11:07:01.097+0000] {logging_mixin.py:188} INFO - 23487963426 WatchEvent 44158642 exqlnet 45356931 bwmarrin/discordgo 2022-08-17T15:52:40Z
+[2024-04-08T11:07:01.098+0000] {logging_mixin.py:188} INFO - Error inserting into org table: 'org'
+[2024-04-08T11:07:01.099+0000] {logging_mixin.py:188} INFO - Error inserting into payload table: 'push_id'
+[2024-04-08T11:07:01.099+0000] {logging_mixin.py:188} INFO - Error inserting into event table: 'push_id'
+[2024-04-08T11:07:01.105+0000] {logging_mixin.py:188} INFO - 23487963471 PullRequestEvent 19955562 lindseyburnett 176802984 RedHatInsights/rhsm-subscriptions 2022-08-17T15:52:40Z
+[2024-04-08T11:07:01.106+0000] {logging_mixin.py:188} INFO - Error inserting into payload table: 'push_id'
+[2024-04-08T11:07:01.106+0000] {logging_mixin.py:188} INFO - Error inserting into event table: 'push_id'
+[2024-04-08T11:07:01.112+0000] {logging_mixin.py:188} INFO - 23487963425 CreateEvent 111345762 wwwuuid2com28 525860966 wwwuuid2com28/22_11948 2022-08-17T15:52:40Z
+[2024-04-08T11:07:01.113+0000] {logging_mixin.py:188} INFO - Error inserting into org table: 'org'
+[2024-04-08T11:07:01.113+0000] {logging_mixin.py:188} INFO - Error inserting into payload table: 'push_id'
+[2024-04-08T11:07:01.113+0000] {logging_mixin.py:188} INFO - Error inserting into event table: 'push_id'
+[2024-04-08T11:07:01.119+0000] {logging_mixin.py:188} INFO - 23487963368 PushEvent 30538765 signcla-test-unsigned 409344435 google-test2/signclav2-probe-repo 2022-08-17T15:52:40Z
+[2024-04-08T11:07:01.126+0000] {logging_mixin.py:188} INFO - 23487963384 PushEvent 8517910 LombiqBot 86929735 Lombiq/Orchard 2022-08-17T15:52:40Z
+[2024-04-08T11:07:01.132+0000] {logging_mixin.py:188} INFO - 23487963376 PushEvent 109001160 HARPHUNA 525552996 HARPHUNA/grpc-SwiftPM 2022-08-17T15:52:40Z
+[2024-04-08T11:07:01.133+0000] {logging_mixin.py:188} INFO - Error inserting into org table: 'org'
+[2024-04-08T11:07:01.134+0000] {logging_mixin.py:188} INFO - Error inserting into event table: insert or update on table "event" violates foreign key constraint "event_org_id_fkey"
+DETAIL:  Key (org_id)=(None) is not present in table "org".
+[2024-04-08T11:07:01.135+0000] {logging_mixin.py:188} INFO - 23487963366 PushEvent 686971 khurtwilliams 288543809 khurtwilliams/microblog 2022-08-17T15:52:40Z
+[2024-04-08T11:07:01.135+0000] {logging_mixin.py:188} INFO - Error inserting into org table: 'org'
+[2024-04-08T11:07:01.136+0000] {logging_mixin.py:188} INFO - Error inserting into event table: insert or update on table "event" violates foreign key constraint "event_org_id_fkey"
+DETAIL:  Key (org_id)=(None) is not present in table "org".
+[2024-04-08T11:07:01.138+0000] {logging_mixin.py:188} INFO - 23487929637 IssueCommentEvent 1696078 sukhada 75340147 350org/ak_intl_v3 2022-08-17T15:51:05Z
+[2024-04-08T11:07:01.139+0000] {logging_mixin.py:188} INFO - Error inserting into payload table: 'push_id'
+[2024-04-08T11:07:01.139+0000] {logging_mixin.py:188} INFO - Error inserting into event table: 'push_id'
+[2024-04-08T11:07:01.145+0000] {logging_mixin.py:188} INFO - 23487929676 PushEvent 66924041 yousabu 525526680 yousabu/ansible_rhce 2022-08-17T15:51:05Z
+[2024-04-08T11:07:01.146+0000] {logging_mixin.py:188} INFO - Error inserting into org table: 'org'
+[2024-04-08T11:07:01.146+0000] {logging_mixin.py:188} INFO - Error inserting into event table: insert or update on table "event" violates foreign key constraint "event_org_id_fkey"
+DETAIL:  Key (org_id)=(None) is not present in table "org".
+[2024-04-08T11:07:01.147+0000] {logging_mixin.py:188} INFO - 23487929674 PushEvent 74971347 MathisGD 512700417 morpho-dao/morpho-utils 2022-08-17T15:51:05Z
+[2024-04-08T11:07:01.153+0000] {logging_mixin.py:188} INFO - 23487929661 PushEvent 91143053 BR-Junior 525851446 BR-Junior/crud-com-vue-e-quasar 2022-08-17T15:51:05Z
+[2024-04-08T11:07:01.154+0000] {logging_mixin.py:188} INFO - Error inserting into org table: 'org'
+[2024-04-08T11:07:01.155+0000] {logging_mixin.py:188} INFO - Error inserting into event table: insert or update on table "event" violates foreign key constraint "event_org_id_fkey"
+DETAIL:  Key (org_id)=(None) is not present in table "org".
+[2024-04-08T11:07:01.155+0000] {logging_mixin.py:188} INFO - 23487929682 PushEvent 60825784 predictcrypto 505029866 predictcrypto/pins 2022-08-17T15:51:05Z
+[2024-04-08T11:07:01.156+0000] {logging_mixin.py:188} INFO - Error inserting into org table: 'org'
+[2024-04-08T11:07:01.159+0000] {logging_mixin.py:188} INFO - Error inserting into event table: insert or update on table "event" violates foreign key constraint "event_org_id_fkey"
+DETAIL:  Key (org_id)=(None) is not present in table "org".
+[2024-04-08T11:07:01.159+0000] {logging_mixin.py:188} INFO - 23487929673 PushEvent 102357035 kazukimikami 525845306 kazukimikami/reservation 2022-08-17T15:51:05Z
+[2024-04-08T11:07:01.160+0000] {logging_mixin.py:188} INFO - Error inserting into org table: 'org'
+[2024-04-08T11:07:01.161+0000] {logging_mixin.py:188} INFO - Error inserting into event table: insert or update on table "event" violates foreign key constraint "event_org_id_fkey"
+DETAIL:  Key (org_id)=(None) is not present in table "org".
+[2024-04-08T11:07:01.162+0000] {logging_mixin.py:188} INFO - 23487929588 PushEvent 46447321 allcontributors[bot] 274724694 dendronhq/dendron 2022-08-17T15:51:05Z
+[2024-04-08T11:07:01.170+0000] {logging_mixin.py:188} INFO - 23487929636 CreateEvent 41898282 github-actions[bot] 523780252 tiller1010/silverstripe-spam-module 2022-08-17T15:51:05Z
+[2024-04-08T11:07:01.171+0000] {logging_mixin.py:188} INFO - Error inserting into org table: 'org'
+[2024-04-08T11:07:01.171+0000] {logging_mixin.py:188} INFO - Error inserting into payload table: 'push_id'
+[2024-04-08T11:07:01.171+0000] {logging_mixin.py:188} INFO - Error inserting into event table: 'push_id'
+[2024-04-08T11:07:01.177+0000] {logging_mixin.py:188} INFO - 23487929580 IssuesEvent 21972349 sozysozbot 524701461 sozysozbot/mikanos 2022-08-17T15:51:05Z
+[2024-04-08T11:07:01.178+0000] {logging_mixin.py:188} INFO - Error inserting into org table: 'org'
+[2024-04-08T11:07:01.178+0000] {logging_mixin.py:188} INFO - Error inserting into payload table: 'push_id'
+[2024-04-08T11:07:01.179+0000] {logging_mixin.py:188} INFO - Error inserting into event table: 'push_id'
+[2024-04-08T11:07:01.184+0000] {logging_mixin.py:188} INFO - 23487929591 PushEvent 17869732 moiify 164541747 moiify/AutoGreen 2022-08-17T15:51:05Z
+[2024-04-08T11:07:01.185+0000] {logging_mixin.py:188} INFO - Error inserting into org table: 'org'
+[2024-04-08T11:07:01.188+0000] {logging_mixin.py:188} INFO - Error inserting into event table: insert or update on table "event" violates foreign key constraint "event_org_id_fkey"
+DETAIL:  Key (org_id)=(None) is not present in table "org".
+[2024-04-08T11:07:01.188+0000] {logging_mixin.py:188} INFO - 23487929533 PushEvent 37043957 Callithrix-omics 524655561 Callithrix-omics/Callithrix-omics.github.io 2022-08-17T15:51:05Z
+[2024-04-08T11:07:01.189+0000] {logging_mixin.py:188} INFO - Error inserting into org table: 'org'
+[2024-04-08T11:07:01.191+0000] {logging_mixin.py:188} INFO - Error inserting into event table: insert or update on table "event" violates foreign key constraint "event_org_id_fkey"
+DETAIL:  Key (org_id)=(None) is not present in table "org".
+[2024-04-08T11:07:01.192+0000] {logging_mixin.py:188} INFO - 23487929573 PushEvent 22376627 datho7561 264221410 datho7561/quarkus-ls 2022-08-17T15:51:05Z
+[2024-04-08T11:07:01.193+0000] {logging_mixin.py:188} INFO - Error inserting into org table: 'org'
+[2024-04-08T11:07:01.195+0000] {logging_mixin.py:188} INFO - Error inserting into event table: insert or update on table "event" violates foreign key constraint "event_org_id_fkey"
+DETAIL:  Key (org_id)=(None) is not present in table "org".
+[2024-04-08T11:07:01.196+0000] {logging_mixin.py:188} INFO - 23487929349 PushEvent 90624848 ofzlo 472789273 Sooktoring/Sooktoring-Android 2022-08-17T15:51:04Z
+[2024-04-08T11:07:01.204+0000] {logging_mixin.py:188} INFO - 23487929578 PushEvent 98659638 edwardzuniga 487950724 edwardzuniga/holbertonschool-higher_level_programming 2022-08-17T15:51:05Z
+[2024-04-08T11:07:01.205+0000] {logging_mixin.py:188} INFO - Error inserting into org table: 'org'
+[2024-04-08T11:07:01.207+0000] {logging_mixin.py:188} INFO - Error inserting into event table: insert or update on table "event" violates foreign key constraint "event_org_id_fkey"
+DETAIL:  Key (org_id)=(None) is not present in table "org".
+[2024-04-08T11:07:01.207+0000] {logging_mixin.py:188} INFO - 23487929597 IssueCommentEvent 32714304 0xcadams 432870871 livepeer/explorer 2022-08-17T15:51:05Z
+[2024-04-08T11:07:01.208+0000] {logging_mixin.py:188} INFO - Error inserting into payload table: 'push_id'
+[2024-04-08T11:07:01.208+0000] {logging_mixin.py:188} INFO - Error inserting into event table: 'push_id'
+[2024-04-08T11:07:01.219+0000] {logging_mixin.py:188} INFO - 23487929522 ReleaseEvent 41898282 github-actions[bot] 523780252 tiller1010/silverstripe-spam-module 2022-08-17T15:51:05Z
+[2024-04-08T11:07:01.220+0000] {logging_mixin.py:188} INFO - Error inserting into org table: 'org'
+[2024-04-08T11:07:01.220+0000] {logging_mixin.py:188} INFO - Error inserting into payload table: 'push_id'
+[2024-04-08T11:07:01.221+0000] {logging_mixin.py:188} INFO - Error inserting into event table: 'push_id'
+[2024-04-08T11:07:01.221+0000] {logging_mixin.py:188} INFO - 23487929560 PushEvent 111369888 Mahalderk 525845966 Mahalderk/CV 2022-08-17T15:51:05Z
+[2024-04-08T11:07:01.222+0000] {logging_mixin.py:188} INFO - Error inserting into org table: 'org'
+[2024-04-08T11:07:01.222+0000] {logging_mixin.py:188} INFO - Error inserting into event table: insert or update on table "event" violates foreign key constraint "event_org_id_fkey"
+DETAIL:  Key (org_id)=(None) is not present in table "org".
+[2024-04-08T11:07:01.223+0000] {logging_mixin.py:188} INFO - 23487929536 PushEvent 5146167 markbush 522475355 markbush/Smalltalk-80-CompilerLib 2022-08-17T15:51:05Z
+[2024-04-08T11:07:01.223+0000] {logging_mixin.py:188} INFO - Error inserting into org table: 'org'
+[2024-04-08T11:07:01.224+0000] {logging_mixin.py:188} INFO - Error inserting into event table: insert or update on table "event" violates foreign key constraint "event_org_id_fkey"
+DETAIL:  Key (org_id)=(None) is not present in table "org".
+[2024-04-08T11:07:01.225+0000] {logging_mixin.py:188} INFO - 23487929501 DeleteEvent 34882892 balena-ci 280075452 product-os/jellyfish-worker 2022-08-17T15:51:05Z
+[2024-04-08T11:07:01.225+0000] {logging_mixin.py:188} INFO - Error inserting into payload table: 'push_id'
+[2024-04-08T11:07:01.226+0000] {logging_mixin.py:188} INFO - Error inserting into event table: 'push_id'
+[2024-04-08T11:07:01.232+0000] {logging_mixin.py:188} INFO - 23487929523 PushEvent 12437240 chengzhong001 524300625 chengzhong001/cpp-examples 2022-08-17T15:51:05Z
+[2024-04-08T11:07:01.232+0000] {logging_mixin.py:188} INFO - Error inserting into org table: 'org'
+[2024-04-08T11:07:01.235+0000] {logging_mixin.py:188} INFO - Error inserting into event table: insert or update on table "event" violates foreign key constraint "event_org_id_fkey"
+DETAIL:  Key (org_id)=(None) is not present in table "org".
+[2024-04-08T11:07:01.235+0000] {logging_mixin.py:188} INFO - 23487929494 PushEvent 39814207 pull[bot] 502695999 kybru91/vscode-languageserver-node 2022-08-17T15:51:05Z
+[2024-04-08T11:07:01.236+0000] {logging_mixin.py:188} INFO - Error inserting into org table: 'org'
+[2024-04-08T11:07:01.238+0000] {logging_mixin.py:188} INFO - Error inserting into event table: insert or update on table "event" violates foreign key constraint "event_org_id_fkey"
+DETAIL:  Key (org_id)=(None) is not present in table "org".
+[2024-04-08T11:07:01.239+0000] {logging_mixin.py:188} INFO - 23487929532 PushEvent 75855221 fathozt 381424857 fathozt/MyProject 2022-08-17T15:51:05Z
+[2024-04-08T11:07:01.239+0000] {logging_mixin.py:188} INFO - Error inserting into org table: 'org'
+[2024-04-08T11:07:01.240+0000] {logging_mixin.py:188} INFO - Error inserting into event table: insert or update on table "event" violates foreign key constraint "event_org_id_fkey"
+DETAIL:  Key (org_id)=(None) is not present in table "org".
+[2024-04-08T11:07:01.240+0000] {logging_mixin.py:188} INFO - 23487929508 CreateEvent 90800936 ibrahimalangri 525860418 ibrahimalangri/KUn 2022-08-17T15:51:05Z
+[2024-04-08T11:07:01.241+0000] {logging_mixin.py:188} INFO - Error inserting into org table: 'org'
+[2024-04-08T11:07:01.241+0000] {logging_mixin.py:188} INFO - Error inserting into payload table: 'push_id'
+[2024-04-08T11:07:01.242+0000] {logging_mixin.py:188} INFO - Error inserting into event table: 'push_id'
+[2024-04-08T11:07:01.249+0000] {logging_mixin.py:188} INFO - 23487929447 PushEvent 102809970 InonAngel98 507821009 web-application-app/gigosRate 2022-08-17T15:51:05Z
+[2024-04-08T11:07:01.256+0000] {logging_mixin.py:188} INFO - 23487929496 DeleteEvent 111434456 DmytroKova 525800293 DmytroKova/TUTORIAL 2022-08-17T15:51:05Z
+[2024-04-08T11:07:01.257+0000] {logging_mixin.py:188} INFO - Error inserting into org table: 'org'
+[2024-04-08T11:07:01.257+0000] {logging_mixin.py:188} INFO - Error inserting into payload table: 'push_id'
+[2024-04-08T11:07:01.258+0000] {logging_mixin.py:188} INFO - Error inserting into event table: 'push_id'
+[2024-04-08T11:07:01.264+0000] {logging_mixin.py:188} INFO - 23487929420 PushEvent 5981249 brianway 55965971 brianway/algorithms-learning 2022-08-17T15:51:05Z
+[2024-04-08T11:07:01.265+0000] {logging_mixin.py:188} INFO - Error inserting into org table: 'org'
+[2024-04-08T11:07:01.266+0000] {logging_mixin.py:188} INFO - Error inserting into event table: insert or update on table "event" violates foreign key constraint "event_org_id_fkey"
+DETAIL:  Key (org_id)=(None) is not present in table "org".
+[2024-04-08T11:07:01.266+0000] {logging_mixin.py:188} INFO - 23487929439 PushEvent 41898282 github-actions[bot] 266811533 wizche/lema-observatory 2022-08-17T15:51:05Z
+[2024-04-08T11:07:01.267+0000] {logging_mixin.py:188} INFO - Error inserting into org table: 'org'
+[2024-04-08T11:07:01.268+0000] {logging_mixin.py:188} INFO - Error inserting into event table: insert or update on table "event" violates foreign key constraint "event_org_id_fkey"
+DETAIL:  Key (org_id)=(None) is not present in table "org".
+[2024-04-08T11:07:01.268+0000] {logging_mixin.py:188} INFO - 23487929452 PushEvent 23216921 adamsorbie 406699027 adamsorbie/Stroke_Microbiota_reproducibility 2022-08-17T15:51:05Z
+[2024-04-08T11:07:01.269+0000] {logging_mixin.py:188} INFO - Error inserting into org table: 'org'
+[2024-04-08T11:07:01.270+0000] {logging_mixin.py:188} INFO - Error inserting into event table: insert or update on table "event" violates foreign key constraint "event_org_id_fkey"
+DETAIL:  Key (org_id)=(None) is not present in table "org".
+[2024-04-08T11:07:01.270+0000] {logging_mixin.py:188} INFO - 23487929428 IssuesEvent 21071133 justbecoder 501154542 justbecoder/react-router-middleware-plus 2022-08-17T15:51:05Z
+[2024-04-08T11:07:01.271+0000] {logging_mixin.py:188} INFO - Error inserting into org table: 'org'
+[2024-04-08T11:07:01.271+0000] {logging_mixin.py:188} INFO - Error inserting into payload table: 'push_id'
+[2024-04-08T11:07:01.271+0000] {logging_mixin.py:188} INFO - Error inserting into event table: 'push_id'
+[2024-04-08T11:07:01.278+0000] {logging_mixin.py:188} INFO - 23487929425 IssueCommentEvent 28898909 dislbenn 239809522 stolostron/search-e2e-test 2022-08-17T15:51:05Z
+[2024-04-08T11:07:01.278+0000] {logging_mixin.py:188} INFO - Error inserting into payload table: 'push_id'
+[2024-04-08T11:07:01.279+0000] {logging_mixin.py:188} INFO - Error inserting into event table: 'push_id'
+[2024-04-08T11:07:01.286+0000] {python.py:202} INFO - Done. Returned value was: None
+[2024-04-08T11:07:01.295+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=etl, task_id=process, execution_date=20240408T105312, start_date=20240408T110700, end_date=20240408T110701
+[2024-04-08T11:07:01.325+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-04-08T11:07:01.342+0000] {taskinstance.py:3312} INFO - 0 downstream tasks scheduled from follow-on schedule check

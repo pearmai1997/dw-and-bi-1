@@ -24,12 +24,12 @@ pip install dbt-core dbt-postgres
 ```sh
 dbt init
 ```
-ุ6. หลังจากสร้าง profiles project สร้าง file ใน folder ds525/models ด้วยชื่อ profiles.yml
+6. หลังจากสร้าง profiles project สร้าง file ใน folder ds525/models ด้วยชื่อ profiles.yml
 และนำข้อมูลทั้งหมดจาก code ด้านล่าง มาใส่ไว้ใน file profiles.yml ที่เราสร้างใน ds525/models 
 ```sh
 code /home/codespace/.dbt/profiles.yml
 ```
-ึ7. ทดสอบการ connection กับ postgres
+7. ทดสอบการ connection กับ postgres
 ```sh
 dbt debug
 ```
@@ -49,4 +49,12 @@ dbt run
 11. จากนั้นรันคำสั่ง test เพื่อเช็ค data quality
 ```sh
 dbt test
+```
+12. ออกจาก ENV
+```sh
+deactivate
+```
+13. ปิดการทำงาน docker
+```sh
+docker compose down
 ```

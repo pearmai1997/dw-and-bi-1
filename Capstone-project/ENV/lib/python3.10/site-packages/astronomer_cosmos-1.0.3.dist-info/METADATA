@@ -1,0 +1,186 @@
+Metadata-Version: 2.1
+Name: astronomer-cosmos
+Version: 1.0.3
+Summary: Render 3rd party workflows in Airflow
+Project-URL: Homepage, https://github.com/astronomer/astronomer-cosmos
+Project-URL: Documentation, https://github.com/astronomer/astronomer-cosmos
+Author-email: Astronomer <humans@astronomer.io>
+License-Expression: Apache-2.0
+License-File: LICENSE
+Keywords: airflow,apache-airflow,astronomer,dags,dbt
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Apache Airflow
+Classifier: Framework :: Apache Airflow :: Provider
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Requires-Python: >=3.7
+Requires-Dist: apache-airflow>=2.3.0
+Requires-Dist: importlib-metadata; python_version < '3.8'
+Requires-Dist: jinja2>=3.0.0
+Requires-Dist: pydantic<2.0.0,>=1.10.0
+Requires-Dist: typing-extensions; python_version < '3.8'
+Requires-Dist: virtualenv
+Provides-Extra: all
+Requires-Dist: astronomer-cosmos[dbt-all]; extra == 'all'
+Provides-Extra: dbt-all
+Requires-Dist: astronomer-cosmos[dbt-openlineage]; extra == 'dbt-all'
+Requires-Dist: dbt-bigquery; extra == 'dbt-all'
+Requires-Dist: dbt-databricks; extra == 'dbt-all'
+Requires-Dist: dbt-exasol; extra == 'dbt-all'
+Requires-Dist: dbt-postgres; extra == 'dbt-all'
+Requires-Dist: dbt-redshift; extra == 'dbt-all'
+Requires-Dist: dbt-snowflake; extra == 'dbt-all'
+Requires-Dist: dbt-spark; extra == 'dbt-all'
+Provides-Extra: dbt-bigquery
+Requires-Dist: dbt-bigquery; extra == 'dbt-bigquery'
+Provides-Extra: dbt-databricks
+Requires-Dist: dbt-databricks; extra == 'dbt-databricks'
+Provides-Extra: dbt-exasol
+Requires-Dist: dbt-exasol; extra == 'dbt-exasol'
+Provides-Extra: dbt-openlineage
+Requires-Dist: dbt-core; extra == 'dbt-openlineage'
+Requires-Dist: openlineage-dbt>=0.21.1; extra == 'dbt-openlineage'
+Provides-Extra: dbt-postgres
+Requires-Dist: dbt-postgres; extra == 'dbt-postgres'
+Provides-Extra: dbt-redshift
+Requires-Dist: dbt-redshift; extra == 'dbt-redshift'
+Provides-Extra: dbt-snowflake
+Requires-Dist: dbt-snowflake; extra == 'dbt-snowflake'
+Provides-Extra: dbt-spark
+Requires-Dist: dbt-spark; extra == 'dbt-spark'
+Provides-Extra: docker
+Requires-Dist: apache-airflow-providers-docker>=3.5.0; extra == 'docker'
+Provides-Extra: docs
+Requires-Dist: pydata-sphinx-theme; extra == 'docs'
+Requires-Dist: sphinx; extra == 'docs'
+Requires-Dist: sphinx-autoapi; extra == 'docs'
+Requires-Dist: sphinx-autobuild; extra == 'docs'
+Provides-Extra: kubernetes
+Requires-Dist: apache-airflow-providers-cncf-kubernetes>=5.1.1; extra == 'kubernetes'
+Provides-Extra: tests
+Requires-Dist: mypy; extra == 'tests'
+Requires-Dist: packaging; extra == 'tests'
+Requires-Dist: pytest-cov; extra == 'tests'
+Requires-Dist: pytest-describe; extra == 'tests'
+Requires-Dist: pytest-dotenv; extra == 'tests'
+Requires-Dist: pytest-split; extra == 'tests'
+Requires-Dist: pytest>=6.0; extra == 'tests'
+Requires-Dist: requests-mock; extra == 'tests'
+Requires-Dist: sqlalchemy-stubs; extra == 'tests'
+Requires-Dist: types-requests; extra == 'tests'
+Description-Content-Type: text/x-rst
+
+.. |fury| image:: https://badge.fury.io/py/astronomer-cosmos.svg
+    :target: https://badge.fury.io/py/astronomer-cosmos
+
+.. |ossrank| image:: https://img.shields.io/endpoint?url=https://ossrank.com/shield/2121
+    :target: https://ossrank.com/p/2121-astronomer-cosmos
+
+.. |downloads| image:: https://img.shields.io/pypi/dm/astronomer-cosmos.svg
+    :target: https://img.shields.io/pypi/dm/astronomer-cosmos
+
+.. |pre-commit| image:: https://results.pre-commit.ci/badge/github/astronomer/astronomer-cosmos/main.svg
+   :target: https://results.pre-commit.ci/latest/github/astronomer/astronomer-cosmos/main
+   :alt: pre-commit.ci status
+
+
+
+.. image:: https://raw.githubusercontent.com/astronomer/astronomer-cosmos/main/docs/_static/cosmos-logo.svg
+
+
+===========================================================
+
+|fury| |ossrank| |downloads| |pre-commit|
+
+Run your dbt Core projects as `Apache Airflow <https://airflow.apache.org/>`_ DAGs and Task Groups with a few lines of code. Benefits include:
+
+- Run dbt projects against Airflow connections instead of dbt profiles
+- Native support for installing and running dbt in a virtual environment to avoid dependency conflicts with Airflow
+- Run tests immediately after a model is done to catch issues early
+- Utilize Airflow's data-aware scheduling to run models immediately after upstream ingestion
+- Turn each dbt model into a task/task group complete with retries, alerting, etc.
+
+Quickstart
+__________
+
+Check out the Quickstart guide on our `docs <https://astronomer.github.io/astronomer-cosmos/#quickstart>`_.
+
+
+Example Usage
+___________________
+
+You can render an Airflow Task Group using the ``DbtTaskGroup`` class. Here's an example with the jaffle_shop project:
+
+
+.. code-block:: python
+
+    from pendulum import datetime
+
+    from airflow import DAG
+    from airflow.operators.empty import EmptyOperator
+    from cosmos import DbtTaskGroup, ProfileConfig, ProjectConfig
+    from cosmos.profiles import PostgresUserPasswordProfileMapping
+
+    profile_config = ProfileConfig(
+        profile_name="default",
+        target_name="dev",
+        profile_mapping=PostgresUserPasswordProfileMapping(
+            conn_id="airflow_db",
+            profile_args={"schema": "public"},
+        ),
+    )
+
+    with DAG(
+        dag_id="extract_dag",
+        start_date=datetime(2022, 11, 27),
+        schedule="@daily",
+    ):
+        e1 = EmptyOperator(task_id="pre_dbt")
+
+        dbt_tg = DbtTaskGroup(
+            project_config=ProjectConfig("jaffle_shop"),
+            profile_config=profile_config,
+        )
+
+        e2 = EmptyOperator(task_id="post_dbt")
+
+        e1 >> dbt_tg >> e2
+
+This will generate an Airflow Task Group that looks like this:
+
+.. figure:: /docs/_static/jaffle_shop_task_group.png
+
+Community
+_________
+- Join us on the Airflow `Slack <https://join.slack.com/t/apache-airflow/shared_invite/zt-1zy8e8h85-es~fn19iMzUmkhPwnyRT6Q>`_ at #airflow-dbt
+
+Changelog
+_________
+
+We follow `Semantic Versioning <https://semver.org/>`_ for releases.
+Check `CHANGELOG.rst <https://github.com/astronomer/astronomer-cosmos/blob/main/CHANGELOG.rst>`_
+for the latest changes.
+
+Contributing Guide
+__________________
+
+All contributions, bug reports, bug fixes, documentation improvements, enhancements are welcome.
+
+A detailed overview an how to contribute can be found in the `Contributing Guide <https://astronomer.github.io/astronomer-cosmos/contributing>`_.
+
+As contributors and maintainers to this project, you are expected to abide by the
+`Contributor Code of Conduct <https://github.com/astronomer/astronomer-cosmos/blob/main/CODE_OF_CONDUCT.md>`_.
+
+
+License
+_______
+
+`Apache License 2.0 <https://github.com/astronomer/astronomer-cosmos/blob/main/LICENSE>`_

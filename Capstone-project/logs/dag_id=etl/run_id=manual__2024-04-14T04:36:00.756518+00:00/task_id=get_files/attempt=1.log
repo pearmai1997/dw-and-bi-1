@@ -1,0 +1,19 @@
+[2024-04-14T04:36:03.984+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-04-14T04:36:03.995+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl.get_files manual__2024-04-14T04:36:00.756518+00:00 [queued]>
+[2024-04-14T04:36:04.000+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl.get_files manual__2024-04-14T04:36:00.756518+00:00 [queued]>
+[2024-04-14T04:36:04.000+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 1
+[2024-04-14T04:36:04.014+0000] {taskinstance.py:2327} INFO - Executing <Task(PythonOperator): get_files> on 2024-04-14 04:36:00.756518+00:00
+[2024-04-14T04:36:04.023+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'etl', 'get_files', 'manual__2024-04-14T04:36:00.756518+00:00', '--job-id', '30', '--raw', '--subdir', 'DAGS_FOLDER/etl.py', '--cfg-path', '/tmp/tmp_3mrzkw5']
+[2024-04-14T04:36:04.026+0000] {standard_task_runner.py:91} INFO - Job 30: Subtask get_files
+[2024-04-14T04:36:04.032+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=2199) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-04-14T04:36:04.033+0000] {standard_task_runner.py:63} INFO - Started process 2256 to run task
+[2024-04-14T04:36:04.071+0000] {task_command.py:426} INFO - Running <TaskInstance: etl.get_files manual__2024-04-14T04:36:00.756518+00:00 [running]> on host 2ce858e27684
+[2024-04-14T04:36:04.162+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl' AIRFLOW_CTX_TASK_ID='get_files' AIRFLOW_CTX_EXECUTION_DATE='2024-04-14T04:36:00.756518+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-04-14T04:36:00.756518+00:00'
+[2024-04-14T04:36:04.164+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-04-14T04:36:04.165+0000] {logging_mixin.py:188} INFO - 1 files found in /opt/***/dags/data
+[2024-04-14T04:36:04.165+0000] {python.py:237} INFO - Done. Returned value was: ['/opt/***/dags/data/order_bazilian.csv']
+[2024-04-14T04:36:04.166+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-04-14T04:36:04.193+0000] {taskinstance.py:1205} INFO - Marking task as SUCCESS. dag_id=etl, task_id=get_files, execution_date=20240414T043600, start_date=20240414T043603, end_date=20240414T043604
+[2024-04-14T04:36:04.246+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-04-14T04:36:04.315+0000] {taskinstance.py:3482} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-04-14T04:36:04.332+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

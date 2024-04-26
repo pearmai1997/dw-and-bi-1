@@ -1,0 +1,23 @@
+[2024-04-22T06:37:12.096+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-04-22T06:37:12.278+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl.gcs_to_bq_customers manual__2024-04-22T06:33:02.563052+00:00 [queued]>
+[2024-04-22T06:37:12.357+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl.gcs_to_bq_customers manual__2024-04-22T06:33:02.563052+00:00 [queued]>
+[2024-04-22T06:37:12.359+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 1
+[2024-04-22T06:37:12.525+0000] {taskinstance.py:2327} INFO - Executing <Task(GCSToBigQueryOperator): gcs_to_bq_customers> on 2024-04-22 06:33:02.563052+00:00
+[2024-04-22T06:37:12.588+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=3602) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-04-22T06:37:12.601+0000] {standard_task_runner.py:63} INFO - Started process 3632 to run task
+[2024-04-22T06:37:12.599+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'etl', 'gcs_to_bq_customers', 'manual__2024-04-22T06:33:02.563052+00:00', '--job-id', '225', '--raw', '--subdir', 'DAGS_FOLDER/etl.py', '--cfg-path', '/tmp/tmp69f_85zj']
+[2024-04-22T06:37:12.614+0000] {standard_task_runner.py:91} INFO - Job 225: Subtask gcs_to_bq_customers
+[2024-04-22T06:37:12.793+0000] {task_command.py:426} INFO - Running <TaskInstance: etl.gcs_to_bq_customers manual__2024-04-22T06:33:02.563052+00:00 [running]> on host af114bcfa67a
+[2024-04-22T06:37:14.816+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl' AIRFLOW_CTX_TASK_ID='gcs_to_bq_customers' AIRFLOW_CTX_EXECUTION_DATE='2024-04-22T06:33:02.563052+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-04-22T06:33:02.563052+00:00'
+[2024-04-22T06:37:14.818+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-04-22T06:37:14.860+0000] {connection.py:274} WARNING - Connection schemes (type: google_cloud_platform) shall not contain '_' according to RFC3986.
+[2024-04-22T06:37:14.901+0000] {base.py:84} INFO - Using connection ID 'my_gcp_conn' for task execution.
+[2024-04-22T06:37:14.901+0000] {gcs_to_bigquery.py:379} INFO - Using existing BigQuery table for storing data...
+[2024-04-22T06:37:15.212+0000] {bigquery.py:2328} INFO - Project is not included in destination_project_dataset_table: order.account_transactions; using project "dataengineer-415510"
+[2024-04-22T06:37:15.219+0000] {gcs_to_bigquery.py:383} INFO - Executing: {'load': {'autodetect': True, 'createDisposition': 'CREATE_IF_NEEDED', 'destinationTable': {'projectId': 'dataengineer-415510', 'datasetId': 'order', 'tableId': 'account_transactions'}, 'sourceFormat': 'CSV', 'sourceUris': ['gs://swu-ds-525-112233/olist_customers_dataset.csv'], 'writeDisposition': 'WRITE_TRUNCATE', 'ignoreUnknownValues': False, 'skipLeadingRows': None, 'fieldDelimiter': ',', 'quote': None, 'allowQuotedNewlines': False, 'encoding': 'UTF-8'}}
+[2024-04-22T06:37:15.220+0000] {bigquery.py:1613} INFO - Inserting job ***_etl_gcs_to_bq_customers_2024_04_22T06_33_02_563052_00_00_635b13157c4e2218fb561f713fc56151
+[2024-04-22T06:37:34.612+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-04-22T06:37:34.619+0000] {taskinstance.py:1205} INFO - Marking task as SUCCESS. dag_id=etl, task_id=gcs_to_bq_customers, execution_date=20240422T063302, start_date=20240422T063712, end_date=20240422T063734
+[2024-04-22T06:37:34.680+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-04-22T06:37:34.827+0000] {taskinstance.py:3482} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-04-22T06:37:34.836+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

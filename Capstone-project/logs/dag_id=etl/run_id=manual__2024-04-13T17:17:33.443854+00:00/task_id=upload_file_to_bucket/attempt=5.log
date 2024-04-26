@@ -1,0 +1,34 @@
+[2024-04-13T17:24:51.071+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-04-13T17:24:51.084+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl.upload_file_to_bucket manual__2024-04-13T17:17:33.443854+00:00 [queued]>
+[2024-04-13T17:24:51.090+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl.upload_file_to_bucket manual__2024-04-13T17:17:33.443854+00:00 [queued]>
+[2024-04-13T17:24:51.090+0000] {taskinstance.py:2303} INFO - Starting attempt 5 of 5
+[2024-04-13T17:24:51.103+0000] {taskinstance.py:2327} INFO - Executing <Task(LocalFilesystemToGCSOperator): upload_file_to_bucket> on 2024-04-13 17:17:33.443854+00:00
+[2024-04-13T17:24:51.113+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'etl', 'upload_file_to_bucket', 'manual__2024-04-13T17:17:33.443854+00:00', '--job-id', '16', '--raw', '--subdir', 'DAGS_FOLDER/etl.py', '--cfg-path', '/tmp/tmpi6kwxp5g']
+[2024-04-13T17:24:51.115+0000] {standard_task_runner.py:91} INFO - Job 16: Subtask upload_file_to_bucket
+[2024-04-13T17:24:51.116+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=46091) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-04-13T17:24:51.117+0000] {standard_task_runner.py:63} INFO - Started process 46108 to run task
+[2024-04-13T17:24:51.190+0000] {task_command.py:426} INFO - Running <TaskInstance: etl.upload_file_to_bucket manual__2024-04-13T17:17:33.443854+00:00 [running]> on host 2ce858e27684
+[2024-04-13T17:24:51.295+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl' AIRFLOW_CTX_TASK_ID='upload_file_to_bucket' AIRFLOW_CTX_EXECUTION_DATE='2024-04-13T17:17:33.443854+00:00' AIRFLOW_CTX_TRY_NUMBER='5' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-04-13T17:17:33.443854+00:00'
+[2024-04-13T17:24:51.297+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-04-13T17:24:51.306+0000] {connection.py:274} WARNING - Connection schemes (type: google_cloud_platform) shall not contain '_' according to RFC3986.
+[2024-04-13T17:24:51.312+0000] {base.py:84} INFO - Using connection ID 'my_gcp_conn' for task execution.
+[2024-04-13T17:24:51.313+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-04-13T17:24:51.314+0000] {taskinstance.py:2890} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/google/cloud/transfers/local_to_gcs.py", line 97, in execute
+    raise FileNotFoundError(self.src)
+FileNotFoundError: /workspaces/dw-and-bi/Capstone-project/dags/data/order_bazilian.csv
+[2024-04-13T17:24:51.324+0000] {taskinstance.py:1205} INFO - Marking task as FAILED. dag_id=etl, task_id=upload_file_to_bucket, execution_date=20240413T171733, start_date=20240413T172451, end_date=20240413T172451
+[2024-04-13T17:24:51.346+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 16 for task upload_file_to_bucket (/workspaces/dw-and-bi/Capstone-project/dags/data/order_bazilian.csv; 46108)
+[2024-04-13T17:24:51.386+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-04-13T17:24:51.430+0000] {taskinstance.py:3482} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-04-13T17:24:51.442+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

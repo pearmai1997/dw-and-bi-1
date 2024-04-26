@@ -1,0 +1,17 @@
+version: 2
+
+sources:
+  - name: order
+    database: bigquery
+    schema: order
+    tables:
+      - name: olist_geolocation_dataset
+      - name: olist_items_dataset
+      - name: olist_orders_dataset
+      - name: olist_payments_dataset
+      - name: olist_products_dataset
+      - name: olist_reviews_dataset
+      - name: olist_sellers_dataset
+      - name: product_category_name_translation
+
+      

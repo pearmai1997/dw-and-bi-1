@@ -1,0 +1,64 @@
+[2024-04-14T07:20:57.678+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-04-14T07:20:57.690+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl.load_dataset_Finance manual__2024-04-14T05:09:56.705108+00:00 [queued]>
+[2024-04-14T07:20:57.696+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl.load_dataset_Finance manual__2024-04-14T05:09:56.705108+00:00 [queued]>
+[2024-04-14T07:20:57.696+0000] {taskinstance.py:2303} INFO - Starting attempt 4 of 4
+[2024-04-14T07:20:57.710+0000] {taskinstance.py:2327} INFO - Executing <Task(GCSToBigQueryOperator): load_dataset_Finance> on 2024-04-14 05:09:56.705108+00:00
+[2024-04-14T07:20:57.723+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=89233) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-04-14T07:20:57.723+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'etl', 'load_dataset_Finance', 'manual__2024-04-14T05:09:56.705108+00:00', '--job-id', '59', '--raw', '--subdir', 'DAGS_FOLDER/etl.py', '--cfg-path', '/tmp/tmp657sb3i3']
+[2024-04-14T07:20:57.724+0000] {standard_task_runner.py:63} INFO - Started process 89245 to run task
+[2024-04-14T07:20:57.724+0000] {standard_task_runner.py:91} INFO - Job 59: Subtask load_dataset_Finance
+[2024-04-14T07:20:57.762+0000] {task_command.py:426} INFO - Running <TaskInstance: etl.load_dataset_Finance manual__2024-04-14T05:09:56.705108+00:00 [running]> on host 2ce858e27684
+[2024-04-14T07:20:57.930+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl' AIRFLOW_CTX_TASK_ID='load_dataset_Finance' AIRFLOW_CTX_EXECUTION_DATE='2024-04-14T05:09:56.705108+00:00' AIRFLOW_CTX_TRY_NUMBER='4' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-04-14T05:09:56.705108+00:00'
+[2024-04-14T07:20:57.931+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-04-14T07:20:57.953+0000] {connection.py:274} WARNING - Connection schemes (type: google_cloud_platform) shall not contain '_' according to RFC3986.
+[2024-04-14T07:20:57.960+0000] {base.py:84} INFO - Using connection ID 'my_gcp_conn' for task execution.
+[2024-04-14T07:20:57.967+0000] {gcs_to_bigquery.py:379} INFO - Using existing BigQuery table for storing data...
+[2024-04-14T07:20:58.034+0000] {gcs_to_bigquery.py:383} INFO - Executing: {'load': {'autodetect': True, 'createDisposition': 'CREATE_IF_NEEDED', 'destinationTable': {'projectId': 'dataengineer-415510', 'datasetId': 'staging_dataset', 'tableId': 'dataset_Finance'}, 'sourceFormat': 'CSV', 'sourceUris': ['gs://swu-ds-525-112233/order_bazilian.csv'], 'writeDisposition': 'WRITE_TRUNCATE', 'ignoreUnknownValues': False, 'schema': {'fields': [{'name': 'No', 'type': 'STRING', 'mode': 'NULLABLE'}, {'name': 'paymenttype', 'type': 'STRING', 'mode': 'NULLABLE'}]}, 'skipLeadingRows': 1, 'fieldDelimiter': ',', 'quote': None, 'allowQuotedNewlines': 'true', 'encoding': 'UTF-8'}}
+[2024-04-14T07:20:58.035+0000] {bigquery.py:1613} INFO - Inserting job ***_etl_load_dataset_Finance_2024_04_14T05_09_56_705108_00_00_cae17e0c8911fe29f16e27470a311a1f
+[2024-04-14T07:20:58.877+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-04-14T07:20:58.877+0000] {taskinstance.py:2890} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/google/cloud/transfers/gcs_to_bigquery.py", line 384, in execute
+    job: BigQueryJob | UnknownJob = self._submit_job(self.hook, job_id)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/google/cloud/transfers/gcs_to_bigquery.py", line 306, in _submit_job
+    return hook.insert_job(
+           ^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/google/common/hooks/base_google.py", line 485, in inner_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/google/cloud/hooks/bigquery.py", line 1616, in insert_job
+    job_api_repr._begin()
+  File "/home/airflow/.local/lib/python3.12/site-packages/google/cloud/bigquery/job/base.py", line 740, in _begin
+    api_response = client._call_api(
+                   ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/google/cloud/bigquery/client.py", line 831, in _call_api
+    return call()
+           ^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "/home/airflow/.local/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/home/airflow/.local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/google/cloud/_http/__init__.py", line 494, in api_request
+    raise exceptions.from_http_response(response)
+google.api_core.exceptions.NotFound: 404 POST https://bigquery.googleapis.com/bigquery/v2/projects/dataengineer-415510/jobs?prettyPrint=false: Not found: Dataset dataengineer-415510:staging_dataset
+[2024-04-14T07:20:58.887+0000] {taskinstance.py:1205} INFO - Marking task as FAILED. dag_id=etl, task_id=load_dataset_Finance, execution_date=20240414T050956, start_date=20240414T072057, end_date=20240414T072058
+[2024-04-14T07:20:58.900+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 59 for task load_dataset_Finance (404 POST https://bigquery.googleapis.com/bigquery/v2/projects/dataengineer-415510/jobs?prettyPrint=false: Not found: Dataset dataengineer-415510:staging_dataset; 89245)
+[2024-04-14T07:20:58.919+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-04-14T07:20:58.932+0000] {taskinstance.py:3482} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-04-14T07:20:58.937+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

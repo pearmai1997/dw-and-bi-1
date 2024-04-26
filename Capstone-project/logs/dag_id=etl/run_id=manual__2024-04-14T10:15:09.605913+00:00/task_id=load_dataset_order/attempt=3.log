@@ -1,0 +1,22 @@
+[2024-04-14T13:30:27.599+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-04-14T13:30:27.611+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl.load_dataset_order manual__2024-04-14T10:15:09.605913+00:00 [queued]>
+[2024-04-14T13:30:27.617+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl.load_dataset_order manual__2024-04-14T10:15:09.605913+00:00 [queued]>
+[2024-04-14T13:30:27.618+0000] {taskinstance.py:2303} INFO - Starting attempt 3 of 3
+[2024-04-14T13:30:27.631+0000] {taskinstance.py:2327} INFO - Executing <Task(GCSToBigQueryOperator): load_dataset_order> on 2024-04-14 10:15:09.605913+00:00
+[2024-04-14T13:30:27.640+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'etl', 'load_dataset_order', 'manual__2024-04-14T10:15:09.605913+00:00', '--job-id', '121', '--raw', '--subdir', 'DAGS_FOLDER/etl.py', '--cfg-path', '/tmp/tmp6j14dey2']
+[2024-04-14T13:30:27.642+0000] {standard_task_runner.py:91} INFO - Job 121: Subtask load_dataset_order
+[2024-04-14T13:30:27.644+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=979) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-04-14T13:30:27.645+0000] {standard_task_runner.py:63} INFO - Started process 1016 to run task
+[2024-04-14T13:30:27.681+0000] {task_command.py:426} INFO - Running <TaskInstance: etl.load_dataset_order manual__2024-04-14T10:15:09.605913+00:00 [running]> on host 2ce858e27684
+[2024-04-14T13:30:27.782+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl' AIRFLOW_CTX_TASK_ID='load_dataset_order' AIRFLOW_CTX_EXECUTION_DATE='2024-04-14T10:15:09.605913+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-04-14T10:15:09.605913+00:00'
+[2024-04-14T13:30:27.785+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-04-14T13:30:27.800+0000] {connection.py:274} WARNING - Connection schemes (type: google_cloud_platform) shall not contain '_' according to RFC3986.
+[2024-04-14T13:30:27.807+0000] {base.py:84} INFO - Using connection ID 'my_gcp_conn' for task execution.
+[2024-04-14T13:30:27.809+0000] {gcs_to_bigquery.py:379} INFO - Using existing BigQuery table for storing data...
+[2024-04-14T13:30:27.855+0000] {gcs_to_bigquery.py:383} INFO - Executing: {'load': {'autodetect': True, 'createDisposition': 'CREATE_IF_NEEDED', 'destinationTable': {'projectId': 'dataengineer-415510', 'datasetId': 'order', 'tableId': 'dataset_order'}, 'sourceFormat': 'CSV', 'sourceUris': ['gs://swu-ds-525-112233/order_bazilian.csv'], 'writeDisposition': 'WRITE_TRUNCATE', 'ignoreUnknownValues': False, 'skipLeadingRows': 1, 'fieldDelimiter': ',', 'quote': None, 'allowQuotedNewlines': 'true', 'encoding': 'UTF-8'}}
+[2024-04-14T13:30:27.856+0000] {bigquery.py:1613} INFO - Inserting job ***_etl_load_dataset_order_2024_04_14T10_15_09_605913_00_00_3cbc95470d6034b188244e4d17a19677
+[2024-04-14T13:31:12.501+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-04-14T13:31:12.509+0000] {taskinstance.py:1205} INFO - Marking task as SUCCESS. dag_id=etl, task_id=load_dataset_order, execution_date=20240414T101509, start_date=20240414T133027, end_date=20240414T133112
+[2024-04-14T13:31:12.572+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-04-14T13:31:12.595+0000] {taskinstance.py:3482} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-04-14T13:31:12.608+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

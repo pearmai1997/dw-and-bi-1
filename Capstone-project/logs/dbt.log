@@ -1,0 +1,59 @@
+[0m16:14:37.988611 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbfca000550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbfca7462c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbfc7e555a0>]}
+
+
+============================== 16:14:38.001747 | cb4d0a00-117b-4296-aa78-57c320ff333e ==============================
+[0m16:14:38.001747 [info ] [MainThread]: Running with dbt=1.7.13
+[0m16:14:38.005046 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'logs', 'profiles_dir': '/home/codespace/.dbt', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt init', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m16:14:47.999630 [debug] [MainThread]: Starter project path: /workspaces/dw-and-bi/Capstone-project/ENV/lib/python3.10/site-packages/dbt/include/starter_project
+[0m16:14:48.015571 [info ] [MainThread]: 
+Your new dbt project "capstone" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m16:14:48.017935 [info ] [MainThread]: Setting up your profile.
+[0m16:25:57.568074 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fadba9ec550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fadbb1422c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fadb88515a0>]}
+
+
+============================== 16:25:57.580199 | 30f3f88f-b11c-4041-917b-0ee79a9968ff ==============================
+[0m16:25:57.580199 [info ] [MainThread]: Running with dbt=1.7.13
+[0m16:25:57.582026 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/codespace/.dbt', 'version_check': 'True', 'warn_error': 'None', 'log_path': 'logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt init', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m16:26:06.957102 [debug] [MainThread]: Starter project path: /workspaces/dw-and-bi/Capstone-project/ENV/lib/python3.10/site-packages/dbt/include/starter_project
+[0m16:26:06.978521 [info ] [MainThread]: 
+Your new dbt project "projectcapstone" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m16:26:06.990057 [info ] [MainThread]: Setting up your profile.
+[0m16:29:29.052957 [info ] [MainThread]: Profile projectcapstone written to /home/codespace/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m16:29:29.061700 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 211.60535, "process_user_time": 4.809606, "process_kernel_time": 0.270309, "process_mem_max_rss": "207792", "process_in_blocks": "8856", "process_out_blocks": "80"}
+[0m16:29:29.062868 [debug] [MainThread]: Command `dbt init` succeeded at 16:29:29.062464 after 211.61 seconds
+[0m16:29:29.063927 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fadba9ec550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fada98d0e50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fadb8853130>]}
+[0m16:29:29.064728 [debug] [MainThread]: Flushing usage events
+[0m12:45:42.066690 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f797c72f850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f797ce82230>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f797a590c70>]}
+
+
+============================== 12:45:42.084809 | 0c13ed63-c65c-46be-86b1-0dbd786568b3 ==============================
+[0m12:45:42.084809 [info ] [MainThread]: Running with dbt=1.7.13
+[0m12:45:42.085912 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'profiles_dir': '/home/codespace/.dbt', 'log_path': 'logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt init', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}

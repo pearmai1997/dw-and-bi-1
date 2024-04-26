@@ -1,0 +1,16 @@
+[2024-04-22T06:33:31.058+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-04-22T06:33:31.341+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl.upload_file_products scheduled__2024-04-19T00:00:00+00:00 [queued]>
+[2024-04-22T06:33:31.524+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl.upload_file_products scheduled__2024-04-19T00:00:00+00:00 [queued]>
+[2024-04-22T06:33:31.554+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 1
+[2024-04-22T06:33:32.559+0000] {taskinstance.py:2327} INFO - Executing <Task(LocalFilesystemToGCSOperator): upload_file_products> on 2024-04-19 00:00:00+00:00
+[2024-04-22T06:33:32.845+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'etl', 'upload_file_products', 'scheduled__2024-04-19T00:00:00+00:00', '--job-id', '192', '--raw', '--subdir', 'DAGS_FOLDER/etl.py', '--cfg-path', '/tmp/tmpbk524v_k']
+[2024-04-22T06:33:32.860+0000] {standard_task_runner.py:91} INFO - Job 192: Subtask upload_file_products
+[2024-04-22T06:33:32.918+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=2074) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-04-22T06:33:32.959+0000] {standard_task_runner.py:63} INFO - Started process 2272 to run task
+[2024-04-22T06:33:33.466+0000] {task_command.py:426} INFO - Running <TaskInstance: etl.upload_file_products scheduled__2024-04-19T00:00:00+00:00 [running]> on host af114bcfa67a
+[2024-04-22T06:34:00.217+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 192 for task upload_file_products ((psycopg2.OperationalError) could not translate host name "postgres" to address: Temporary failure in name resolution
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8); 2272)
+[2024-04-22T06:34:00.783+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-04-22T06:34:03.996+0000] {taskinstance.py:3482} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-04-22T06:34:04.102+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

@@ -1,0 +1,20 @@
+[2024-04-24T16:17:25.638+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-04-24T16:17:26.277+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl.upload_file_reviews scheduled__2024-04-23T00:00:00+00:00 [queued]>
+[2024-04-24T16:17:26.662+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl.upload_file_reviews scheduled__2024-04-23T00:00:00+00:00 [queued]>
+[2024-04-24T16:17:26.666+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 1
+[2024-04-24T16:17:27.242+0000] {taskinstance.py:2327} INFO - Executing <Task(LocalFilesystemToGCSOperator): upload_file_reviews> on 2024-04-23 00:00:00+00:00
+[2024-04-24T16:17:27.687+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'etl', 'upload_file_reviews', 'scheduled__2024-04-23T00:00:00+00:00', '--job-id', '258', '--raw', '--subdir', 'DAGS_FOLDER/etl.py', '--cfg-path', '/tmp/tmp08n2154r']
+[2024-04-24T16:17:27.723+0000] {standard_task_runner.py:91} INFO - Job 258: Subtask upload_file_reviews
+[2024-04-24T16:17:27.927+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=261) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-04-24T16:17:27.962+0000] {standard_task_runner.py:63} INFO - Started process 410 to run task
+[2024-04-24T16:17:28.910+0000] {task_command.py:426} INFO - Running <TaskInstance: etl.upload_file_reviews scheduled__2024-04-23T00:00:00+00:00 [running]> on host af114bcfa67a
+[2024-04-24T16:17:36.403+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl' AIRFLOW_CTX_TASK_ID='upload_file_reviews' AIRFLOW_CTX_EXECUTION_DATE='2024-04-23T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-04-23T00:00:00+00:00'
+[2024-04-24T16:17:36.442+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-04-24T16:17:36.569+0000] {connection.py:274} WARNING - Connection schemes (type: google_cloud_platform) shall not contain '_' according to RFC3986.
+[2024-04-24T16:17:36.638+0000] {base.py:84} INFO - Using connection ID 'my_gcp_conn' for task execution.
+[2024-04-24T16:17:42.864+0000] {gcs.py:557} INFO - File /opt/***/dags/data/olist_order_reviews_dataset.csv uploaded to olist_order_reviews_dataset.csv in swu-ds-525-112233 bucket
+[2024-04-24T16:17:42.921+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-04-24T16:17:43.202+0000] {taskinstance.py:1205} INFO - Marking task as SUCCESS. dag_id=etl, task_id=upload_file_reviews, execution_date=20240423T000000, start_date=20240424T161726, end_date=20240424T161743
+[2024-04-24T16:17:43.690+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-04-24T16:17:44.652+0000] {taskinstance.py:3482} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-04-24T16:17:44.710+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

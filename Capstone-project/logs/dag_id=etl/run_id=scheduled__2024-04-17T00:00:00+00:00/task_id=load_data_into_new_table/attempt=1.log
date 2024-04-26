@@ -1,0 +1,21 @@
+[2024-04-18T08:27:54.365+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-04-18T08:27:54.376+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl.load_data_into_new_table scheduled__2024-04-17T00:00:00+00:00 [queued]>
+[2024-04-18T08:27:54.381+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl.load_data_into_new_table scheduled__2024-04-17T00:00:00+00:00 [queued]>
+[2024-04-18T08:27:54.381+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 1
+[2024-04-18T08:27:54.395+0000] {taskinstance.py:2327} INFO - Executing <Task(BigQueryInsertJobOperator): load_data_into_new_table> on 2024-04-17 00:00:00+00:00
+[2024-04-18T08:27:54.405+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'etl', 'load_data_into_new_table', 'scheduled__2024-04-17T00:00:00+00:00', '--job-id', '181', '--raw', '--subdir', 'DAGS_FOLDER/etl.py', '--cfg-path', '/tmp/tmpan12mj_b']
+[2024-04-18T08:27:54.407+0000] {standard_task_runner.py:91} INFO - Job 181: Subtask load_data_into_new_table
+[2024-04-18T08:27:54.410+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=736) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-04-18T08:27:54.411+0000] {standard_task_runner.py:63} INFO - Started process 760 to run task
+[2024-04-18T08:27:54.446+0000] {task_command.py:426} INFO - Running <TaskInstance: etl.load_data_into_new_table scheduled__2024-04-17T00:00:00+00:00 [running]> on host 2ce858e27684
+[2024-04-18T08:27:54.524+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl' AIRFLOW_CTX_TASK_ID='load_data_into_new_table' AIRFLOW_CTX_EXECUTION_DATE='2024-04-17T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-04-17T00:00:00+00:00'
+[2024-04-18T08:27:54.525+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-04-18T08:27:54.531+0000] {connection.py:274} WARNING - Connection schemes (type: google_cloud_platform) shall not contain '_' according to RFC3986.
+[2024-04-18T08:27:54.535+0000] {base.py:84} INFO - Using connection ID 'my_gcp_conn' for task execution.
+[2024-04-18T08:27:54.594+0000] {bigquery.py:2811} INFO - Executing: {'query': {'query': '\n            CREATE OR REPLACE TABLE `dataengineer-415510.order.Finance` AS\n            SELECT \n                customerid, \n                paymenttype\n            FROM `dataengineer-415510.order.dataset_order`\n            ', 'useLegacySql': False}}'
+[2024-04-18T08:27:54.595+0000] {bigquery.py:1613} INFO - Inserting job ***_etl_load_data_into_new_table_2024_04_17T00_00_00_00_00_59af270b6abc404f0c2b157ced85c98f
+[2024-04-18T08:27:58.418+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-04-18T08:27:58.463+0000] {taskinstance.py:1205} INFO - Marking task as SUCCESS. dag_id=etl, task_id=load_data_into_new_table, execution_date=20240417T000000, start_date=20240418T082754, end_date=20240418T082758
+[2024-04-18T08:27:58.784+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-04-18T08:27:58.854+0000] {taskinstance.py:3482} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-04-18T08:27:58.869+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

@@ -57,3 +57,31 @@ Happy modeling!
 ============================== 12:45:42.084809 | 0c13ed63-c65c-46be-86b1-0dbd786568b3 ==============================
 [0m12:45:42.084809 [info ] [MainThread]: Running with dbt=1.7.13
 [0m12:45:42.085912 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'profiles_dir': '/home/codespace/.dbt', 'log_path': 'logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt init', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m07:36:04.944648 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9c188afaf0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9c166cbb20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9c166cbac0>]}
+
+
+============================== 07:36:04.976027 | c63a7906-da5b-432e-9f70-d6e21094c18c ==============================
+[0m07:36:04.976027 [info ] [MainThread]: Running with dbt=1.7.13
+[0m07:36:04.977356 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'profiles_dir': '/home/codespace/.dbt', 'log_path': 'logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt init', 'log_format': 'default', 'static_parser': 'True', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m07:36:04.978541 [warn ] [MainThread]: [ConfigFolderDirectory]: Unable to parse dict {'dir': PosixPath('/home/codespace/.dbt')}
+[0m07:36:04.979621 [info ] [MainThread]: Creating dbt configuration folder at 
+[0m07:39:50.770368 [info ] [MainThread]: A project called projectcapstone already exists here.
+[0m07:39:50.779019 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 225.84009, "process_user_time": 3.477518, "process_kernel_time": 0.107406, "process_mem_max_rss": "104392", "process_in_blocks": "136", "process_out_blocks": "160"}
+[0m07:39:50.780027 [debug] [MainThread]: Command `dbt init` succeeded at 07:39:50.779786 after 225.84 seconds
+[0m07:39:50.780805 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9c188afaf0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9c166cbe20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9c166cbb80>]}
+[0m07:39:50.781609 [debug] [MainThread]: Flushing usage events
+[0m07:40:09.653319 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7efc009e0550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7efbfe80fb20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7efbfe80fac0>]}
+
+
+============================== 07:40:09.657898 | bb2531dc-d4de-4446-b33b-5270acfe4aa9 ==============================
+[0m07:40:09.657898 [info ] [MainThread]: Running with dbt=1.7.13
+[0m07:40:09.659261 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'profiles_dir': '/home/codespace/.dbt', 'log_path': 'logs', 'fail_fast': 'False', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'invocation_command': 'dbt run', 'log_format': 'default', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m07:40:09.660632 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /workspaces/dw-and-bi/Capstone-project/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m07:40:09.662317 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 0.014745477, "process_user_time": 3.527607, "process_kernel_time": 0.114749, "process_mem_max_rss": "96676", "process_out_blocks": "8", "command_success": false, "process_in_blocks": "0"}
+[0m07:40:09.663931 [debug] [MainThread]: Command `dbt run` failed at 07:40:09.663555 after 0.02 seconds
+[0m07:40:09.665771 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7efc009e0550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7efbfe80faf0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7efbfe80fd30>]}
+[0m07:40:09.666970 [debug] [MainThread]: Flushing usage events

@@ -1,7 +1,7 @@
 version: 2
 
 sources:
-  - name: order
+  - name: dataengineer-415510
     database: bigquery
     schema: order
     tables:
@@ -13,5 +13,6 @@ sources:
       - name: olist_reviews_dataset
       - name: olist_sellers_dataset
       - name: product_category_name_translation
+      - name: olist_customers_dataset
 
       

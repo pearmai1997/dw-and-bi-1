@@ -20,7 +20,7 @@ projectcapstone:
       type: bigquery
       method: service-account
       project: dataengineer-415510
-      dataset: order
+      dataset: dbt_olist
       threads: 1 # Must be a value of 1 or greater
       keyfile: /workspaces/dw-and-bi/Capstone-project/key/dataengineer-415510-0058c045978d.json
       OPTIONAL_CONFIG: VALUE
